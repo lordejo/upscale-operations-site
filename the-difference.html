@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Difference — Upscale Operations</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="description" content="The difference isn't a better assistant — it's an entire team. See how a coordinated Upscale Operations team, with hours shared across every specialist, beats hiring a single VA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+  :root{--ink:#232323;--gray-700:#444444;--gray-500:#636363;--gray-200:#E0E0E0;--gray-100:#F3F3F2;--paper:#FFFFFF;
+    --display:'Barlow', sans-serif;--body:'Inter', sans-serif;--mx:clamp(1.25rem,5vw,6rem);--maxw:1240px;}
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;font-family:var(--body);color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;line-height:1.6;overflow-x:hidden;}
+  body::before{content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.022;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--mx);padding-right:var(--mx);}
+  h1,h2,h3{font-family:var(--display);font-weight:600;margin:0;letter-spacing:-.015em;line-height:1.02;}
+  p{margin:0;}
+  .tick{display:inline-flex;color:var(--ink);}
+  .tick svg{height:18px;width:auto;}
+  .eyebrow{font-family:var(--body);font-size:.74rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gray-500);display:flex;align-items:center;gap:.85rem;}
+  .arule{display:flex;align-items:center;gap:0;margin:0;}
+  .arule .ln{height:1px;background:var(--gray-200);flex:1;}
+  .arule svg{flex:0 0 auto;height:11px;width:14px;}
+
+  .btn{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--body);font-weight:600;font-size:.92rem;letter-spacing:-.01em;padding:.85rem 1.4rem;border-radius:10px;border:1px solid var(--ink);background:var(--ink);color:#fff;cursor:pointer;transition:transform .25s ease,background .25s ease,border-color .25s ease;}
+  .btn:hover{transform:translateY(-1px);background:#111;}
+  .btn svg{height:11px;width:auto;}
+  .btn.ghost{background:transparent;color:var(--ink);border-color:var(--gray-200);}
+  .btn.ghost:hover{background:var(--gray-100);border-color:#c9c9c9;}
+  .btn.light{background:#fff;color:var(--ink);border-color:#fff;}
+  .btn.light:hover{background:var(--gray-100);}
+  .btn.outline-light{background:transparent;color:#fff;border-color:rgba(255,255,255,.5);}
+  .btn.outline-light:hover{border-color:#fff;background:rgba(255,255,255,.07);}
+
+  header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.82);backdrop-filter:saturate(140%) blur(12px);-webkit-backdrop-filter:saturate(140%) blur(12px);border-bottom:1px solid var(--gray-200);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding-top:1rem;padding-bottom:1rem;}
+  .brand{display:inline-flex;align-items:center;gap:.7rem;}
+  .brand .mark{height:30px;width:auto;}
+  .name{font-family:var(--display);font-weight:500;font-size:1.12rem;letter-spacing:-.01em;color:var(--ink);}
+  .name b{font-weight:700;} .name span{color:var(--gray-500);}
+  .nav-links{display:flex;align-items:center;gap:1.6rem;}
+  .nav-links a.lk{font-size:.92rem;font-weight:500;color:var(--gray-700);transition:color .2s ease;}
+  .nav-links a.lk:hover{color:var(--ink);}
+  .nav-links a.lk.current{color:var(--ink);}
+  .menu-btn{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:.4rem;}
+  .menu-btn span{width:22px;height:2px;background:var(--ink);display:block;border-radius:2px;}
+
+  .sec-pad{padding:clamp(3.5rem,8vw,7rem) 0;}
+  .sec-head{max-width:760px;margin:0 0 clamp(2rem,4vw,3.2rem);}
+  .sec-head .eyebrow{margin-bottom:1rem;}
+  .sec-head h2{font-size:clamp(1.9rem,4vw,3rem);}
+  .sec-head .lead{margin-top:1rem;color:var(--gray-700);font-size:clamp(1.02rem,1.5vw,1.18rem);max-width:560px;}
+
+  /* hero */
+  .hero{position:relative;padding:clamp(3.5rem,8vw,7rem) 0 clamp(3rem,6vw,5rem);overflow:hidden;}
+  .arcs{position:absolute;left:-30px;bottom:-30px;width:min(46vw,440px);height:auto;color:var(--gray-200);opacity:.8;pointer-events:none;}
+  .hero-inner{position:relative;z-index:1;max-width:900px;}
+  .hero h1{font-size:clamp(2.8rem,8.5vw,5.6rem);font-weight:700;letter-spacing:-.03em;line-height:.95;margin-top:1.5rem;}
+  .hero h1 .muted{color:#C4C4C4;}
+  .sub{margin-top:1.6rem;max-width:640px;color:var(--gray-700);font-size:clamp(1.05rem,1.7vw,1.3rem);line-height:1.6;}
+  .hero .cta-row{margin-top:2rem;display:flex;gap:.8rem;flex-wrap:wrap;}
+  .hero .arule{margin-top:clamp(2rem,4vw,3rem);}
+
+  /* comparison */
+  .diff-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:1.2rem;align-items:stretch;}
+  .diff-card{border:1px solid var(--gray-200);border-radius:18px;padding:clamp(1.6rem,3vw,2.2rem);background:var(--paper);}
+  .diff-card.dark{background:var(--ink);color:#fff;border-color:var(--ink);position:relative;overflow:hidden;}
+  .diff-card .tag{font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gray-500);}
+  .diff-card.dark .tag{color:rgba(255,255,255,.55);}
+  .diff-card h3{font-size:clamp(1.3rem,2.4vw,1.7rem);margin:.7rem 0 .2rem;letter-spacing:-.015em;}
+  .diff-card p{color:var(--gray-700);font-size:1rem;line-height:1.65;}
+  .diff-card.dark p{color:rgba(255,255,255,.72);}
+  .diff-card .lab{margin-top:1.3rem;display:flex;align-items:center;gap:.6rem;font-size:.85rem;font-weight:500;color:var(--gray-500);}
+  .diff-card.dark .lab{color:rgba(255,255,255,.7);}
+  .diff-card .dot{width:8px;height:8px;border-radius:50%;background:var(--gray-500);display:inline-block;}
+  .diff-card.dark .dot{background:#fff;}
+  .vs{align-self:center;font-family:var(--display);font-weight:600;font-style:italic;font-size:1rem;color:var(--gray-500);background:var(--paper);border:1px solid var(--gray-200);width:50px;height:50px;border-radius:50%;display:grid;place-items:center;}
+
+  .diagram{width:100%;height:auto;display:block;margin:.6rem 0 1.2rem;}
+  .diagram text{font-family:var(--body);font-weight:600;}
+  .conn{stroke-dasharray:260;stroke-dashoffset:260;transition:stroke-dashoffset .9s ease;}
+  .in .conn{stroke-dashoffset:0;}
+  .conn:nth-of-type(2){transition-delay:.07s}.conn:nth-of-type(3){transition-delay:.14s}
+  .conn:nth-of-type(4){transition-delay:.21s}.conn:nth-of-type(5){transition-delay:.28s}
+  .conn:nth-of-type(6){transition-delay:.35s}.conn:nth-of-type(7){transition-delay:.42s}
+  .conn:nth-of-type(8){transition-delay:.49s}
+  .hub{transform-box:fill-box;transform-origin:center;animation:pulse 3.6s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
+
+  /* customization */
+  .two-col{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4rem);align-items:center;}
+  .two-col .copy p{color:var(--gray-700);font-size:clamp(1rem,1.4vw,1.12rem);line-height:1.75;}
+  .two-col .copy p + p{margin-top:1.1rem;}
+  .chips{display:flex;flex-wrap:wrap;gap:.55rem;}
+  .chips span{font-size:.85rem;font-weight:500;color:var(--gray-700);border:1px solid var(--gray-200);border-radius:100px;padding:.5rem 1rem;background:var(--paper);transition:transform .3s ease,border-color .3s ease;cursor:default;}
+  .chips span:hover{border-color:#c9c9c9;transform:translateY(-2px);}
+  .chips span.on{background:var(--ink);color:#fff;border-color:var(--ink);}
+
+  /* hours (dark panel) */
+  .hours-sec{background:var(--gray-100);}
+  .hours-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,5vw,3.5rem);align-items:center;}
+  .hours-copy p{color:var(--gray-700);font-size:clamp(1rem,1.4vw,1.12rem);line-height:1.7;max-width:46ch;}
+  .hours-copy p + p{margin-top:1rem;}
+  .hint{margin-top:1.3rem;font-size:.9rem;color:var(--ink);font-weight:600;display:flex;align-items:center;gap:.5rem;}
+  .hint svg{height:15px;width:auto;}
+
+  .panel{background:var(--ink);color:#fff;border-radius:18px;padding:clamp(1.6rem,3vw,2.1rem);box-shadow:0 30px 60px -30px rgba(35,35,35,.5);}
+  .panel .ptop{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:1.3rem;}
+  .panel .plabel{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:600;}
+  .panel .ptotal{font-family:var(--display);font-weight:700;font-size:2.5rem;line-height:1;letter-spacing:-.02em;margin-top:.4rem;}
+  .panel .ptotal small{font-family:var(--body);font-size:.85rem;font-weight:500;color:rgba(255,255,255,.55);letter-spacing:.01em;}
+  .bar{display:flex;height:20px;border-radius:7px;overflow:hidden;background:#3a3a3a;margin-bottom:1.5rem;}
+  .bar .seg{height:100%;transition:width .45s cubic-bezier(.3,.9,.3,1);}
+  .bar .seg.flex{background:repeating-linear-gradient(45deg,#4d4d4d 0 6px,#3a3a3a 6px 12px);}
+  .rows{display:flex;flex-direction:column;}
+  .row{display:flex;align-items:center;gap:.85rem;padding:.55rem 0;border-bottom:1px solid rgba(255,255,255,.08);}
+  .row:last-child{border-bottom:0;}
+  .row .sw{width:11px;height:11px;border-radius:3px;flex-shrink:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18);}
+  .row .rn{flex:1;font-size:.94rem;font-weight:500;color:#E7E3DB;}
+  .row .rh{font-family:var(--display);font-weight:700;font-size:1.05rem;min-width:2.4ch;text-align:right;color:#fff;}
+  .row .rh small{font-family:var(--body);font-size:.7rem;color:rgba(255,255,255,.5);margin-left:1px;font-weight:500;}
+  .stepper{display:flex;gap:.4rem;}
+  .stepper button{width:28px;height:28px;border-radius:8px;border:1px solid #4a4a4a;background:#2f2f2f;color:#fff;font-size:1.05rem;line-height:1;cursor:pointer;transition:all .2s;display:grid;place-items:center;}
+  .stepper button:hover:not(:disabled){background:#fff;color:var(--ink);border-color:#fff;}
+  .stepper button:disabled{opacity:.32;cursor:not-allowed;}
+  .flexrow .rn{color:rgba(255,255,255,.6);font-style:italic;}
+  .panel .pfoot{margin-top:1.3rem;padding-top:1.1rem;border-top:1px solid rgba(255,255,255,.14);font-size:.82rem;color:rgba(255,255,255,.55);}
+
+  /* outcomes */
+  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem 2.6rem;}
+  .why-item{display:flex;gap:1rem;}
+  .why-item .cp{height:24px;width:24px;flex:0 0 auto;color:var(--gray-500);margin-top:.15rem;}
+  .why-item h3{font-size:1.12rem;margin:0 0 .35rem;letter-spacing:-.01em;}
+  .why-item p{color:var(--gray-700);font-size:.95rem;line-height:1.6;}
+
+  /* cta */
+  .cta{background:var(--ink);color:#fff;padding:clamp(3.5rem,8vw,7rem) 0;text-align:center;}
+  .cta .eyebrow{justify-content:center;color:rgba(255,255,255,.6);margin-bottom:1rem;}
+  .cta .tick{color:#fff;}
+  .cta h2{font-size:clamp(2rem,4.5vw,3.4rem);color:#fff;}
+  .cta p{margin:1.1rem auto 0;max-width:560px;color:rgba(255,255,255,.72);font-size:clamp(1rem,1.5vw,1.15rem);}
+  .cta .cta-row{margin-top:2rem;display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;}
+
+  /* footer */
+  footer{background:var(--ink);color:#fff;padding:clamp(3rem,6vw,5rem) 0 2rem;}
+  .foot-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:clamp(1.5rem,4vw,3rem);padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.14);}
+  .foot-brand .mark{height:46px;width:auto;margin-bottom:1.2rem;}
+  .foot-brand .bn{font-family:var(--display);font-weight:500;font-size:1.15rem;margin-bottom:.7rem;}
+  .foot-brand .bn b{font-weight:700;} .foot-brand .bn span{color:rgba(255,255,255,.6);}
+  .foot-brand p{color:rgba(255,255,255,.6);max-width:280px;font-size:.95rem;line-height:1.6;}
+  .foot-brand .tick{margin-top:1.2rem;color:#fff;opacity:.5;}
+  .foot-brand .tick svg{height:16px;}
+  .foot-col h4{font-family:var(--display);font-weight:600;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);margin:0 0 1.1rem;}
+  .foot-col a{display:block;color:rgba(255,255,255,.82);font-size:.95rem;padding:.32rem 0;transition:color .2s ease;}
+  .foot-col a:hover{color:#fff;}
+  .foot-bot{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-top:1.6rem;color:rgba(255,255,255,.5);font-size:.85rem;}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
+  .reveal.in{opacity:1;transform:none;}
+
+  @media (max-width:980px){
+    .diff-grid{grid-template-columns:1fr;}
+    .vs{justify-self:center;}
+    .why-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:860px){
+    .two-col{grid-template-columns:1fr;gap:2.4rem;}
+    .hours-grid{grid-template-columns:1fr;gap:2.2rem;}
+    .foot-top{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:760px){
+    .nav-links{position:fixed;inset:62px 0 auto 0;flex-direction:column;align-items:flex-start;gap:1.1rem;background:#fff;border-bottom:1px solid var(--gray-200);padding:1.4rem var(--mx);transform:translateY(-12px);opacity:0;pointer-events:none;transition:transform .25s ease,opacity .25s ease;}
+    .nav-links.open{transform:none;opacity:1;pointer-events:auto;}
+    .menu-btn{display:flex;}
+  }
+  @media (max-width:620px){
+    .foot-top{grid-template-columns:1fr;}
+    .foot-bot{justify-content:flex-start;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+    .hub{animation:none;}.conn{stroke-dashoffset:0;}
+  }
+
+</style>
+</head>
+<body>
+
+<header><div class="wrap nav"><a class="brand" href="index.html" aria-label="Upscale Operations home"><svg class="mark" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M60 64 L60 119 A40 40 0 0 0 140 119 L140 64" fill="none" stroke="#232323" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/><polygon points="100,48 126,84 113,84 113,140 87,140 87,84 74,84" fill="#9A9A9A"/></svg><span class="name"><b>Upscale</b> <span>Operations</span></span></a><nav class="nav-links" id="navlinks"><a class="lk current" href="the-difference.html">The difference</a><a class="lk" href="index.html#services">What we run</a><a class="lk" href="index.html#process">How it works</a><a class="lk" href="index.html#why">Why a team</a><a class="btn" href="index.html#contact">Book a call <svg viewBox="0 0 24 12" fill="none" aria-hidden="true"><path d="M0 6h21M16 1l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></nav><button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button></div></header>
+
+<!-- HERO -->
+<section class="hero"><svg class="arcs" viewBox="0 0 400 400" fill="none" aria-hidden="true"><path d="M0 280 A120 120 0 0 1 120 400" stroke="currentColor" stroke-width="1.4"/><path d="M0 230 A170 170 0 0 1 170 400" stroke="currentColor" stroke-width="1.4"/><path d="M0 180 A220 220 0 0 1 220 400" stroke="currentColor" stroke-width="1.4"/><path d="M0 130 A270 270 0 0 1 270 400" stroke="currentColor" stroke-width="1.4"/><path d="M0 80 A320 320 0 0 1 320 400" stroke="currentColor" stroke-width="1.4"/><path d="M0 30 A370 370 0 0 1 370 400" stroke="currentColor" stroke-width="1.4"/></svg><div class="wrap hero-inner"><div class="eyebrow reveal"><span class="tick"><svg viewBox="0 0 140 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1"/><path d="M12 6.5v11M6.5 12h11" stroke="currentColor" stroke-width="1"/><line x1="27" y1="12" x2="120" y2="12" stroke="currentColor" stroke-width="1"/><path d="M114 7l8 5-8 5" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span> The difference</div><h1 class="reveal" style="transition-delay:.06s">The difference isn&rsquo;t<br>a better assistant.<br><span class="muted">It&rsquo;s an entire team.</span></h1><p class="sub reveal" style="transition-delay:.14s">A single VA is one person&rsquo;s hours, one skill set, one ceiling. Upscale Operations gives you a coordinated team of specialists &mdash; with your hours flowing freely across all of them, and one point of contact running it.</p><div class="cta-row reveal" style="transition-delay:.2s"><a class="btn" href="index.html#contact">Book a discovery call <svg viewBox="0 0 24 12" fill="none" aria-hidden="true"><path d="M0 6h21M16 1l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn ghost" href="#compare">See the comparison</a></div><div class="arule reveal" style="transition-delay:.26s"><span class="ln"></span><svg viewBox="0 0 14 11" fill="none" aria-hidden="true"><path d="M0 5.5h9M8 1l5 4.5-5 4.5" stroke="#636363" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div></section>
+
+<!-- 01 COMPARISON -->
+<section class="sec-pad" id="compare"><div class="wrap"><div class="sec-head reveal"><div class="eyebrow"><span class="tick"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1"/><path d="M12 6.5v11M6.5 12h11" stroke="currentColor" stroke-width="1"/></svg></span> The comparison</div><h2>One assistant is one set of hands.<br>We&rsquo;re an entire department.</h2><p class="lead">Hire one VA and you&rsquo;ve hired one person&rsquo;s time, one person&rsquo;s strengths, and one person&rsquo;s limits. Here&rsquo;s what changes the moment you bring in a team.</p></div>
+
+<div class="diff-grid">
+  <!-- OLD WAY -->
+  <div class="diff-card reveal">
+    <div class="tag">The usual way</div>
+    <h3>A single virtual assistant</h3>
+    <svg class="diagram" viewBox="0 0 400 340" role="img" aria-label="One assistant connected to too many different tasks at once">
+      <g stroke="#D2D2D2" stroke-width="1.3" fill="none">
+        <line class="conn" x1="200" y1="170" x2="200" y2="46"/>
+        <line class="conn" x1="200" y1="170" x2="330" y2="76"/>
+        <line class="conn" x1="200" y1="170" x2="356" y2="178"/>
+        <line class="conn" x1="200" y1="170" x2="316" y2="286"/>
+        <line class="conn" x1="200" y1="170" x2="172" y2="312"/>
+        <line class="conn" x1="200" y1="170" x2="58" y2="282"/>
+        <line class="conn" x1="200" y1="170" x2="42" y2="158"/>
+        <line class="conn" x1="200" y1="170" x2="74" y2="62"/>
+      </g>
+      <g font-size="11" fill="#444444" text-anchor="middle">
+        <g><rect x="168" y="28" width="64" height="26" rx="13" fill="#F3F3F2" stroke="#E0E0E0"/><text x="200" y="45">Admin</text></g>
+        <g><rect x="296" y="60" width="68" height="26" rx="13" fill="#F3F3F2" stroke="#E0E0E0"/><text x="330" y="77">Design</text></g>
+        <g><rect x="316" y="164" width="82" height="26" rx="13" fill="#F3F3F2" stroke="#E0E0E0"/><text x="357" y="181">Bookkeeping</text></g>
+        <g><rect x="280" y="272" width="72" height="26" rx="13" fill="#F3F3F2" stroke="#E0E0E0"/><text x="316" y="289">Support</text></g>
+        <g><rect x="138" y="300" width="68" height="26" rx="13" fill="#F3F3F2" stroke="#E0E0E0"/><text x="172" y="317">Social</text></g>
+        <g><rect x="22" y="268" width="72" height="26" rx="13" fill="#F3F3F2" stroke="#E0E0E0"/><text x="58" y="285">Research</text></g>
+        <g><rect x="8" y="144" width="64" height="26" rx="13" fill="#F3F3F2" stroke="#E0E0E0"/><text x="40" y="161">Inbox</text></g>
+        <g><rect x="42" y="48" width="64" height="26" rx="13" fill="#F3F3F2" stroke="#E0E0E0"/><text x="74" y="65">Calls</text></g>
+      </g>
+      <circle cx="200" cy="170" r="42" fill="#636363"/>
+      <text x="200" y="166" text-anchor="middle" font-size="13" fill="#fff">Your</text>
+      <text x="200" y="182" text-anchor="middle" font-size="13" fill="#fff">VA</text>
+    </svg>
+    <p>One person&rsquo;s hours and one person&rsquo;s skill set. Great at a few things, stretched thin on the rest &mdash; and the moment they&rsquo;re sick, slammed, or quit, it all stalls.</p>
+    <div class="lab"><span class="dot"></span> One person, many bottlenecks</div>
+  </div>
+
+  <div class="vs">vs</div>
+
+  <!-- NEW WAY -->
+  <div class="diff-card dark reveal" style="transition-delay:.08s">
+    <div class="tag">The Upscale way</div>
+    <h3>A team that runs your operations</h3>
+    <svg class="diagram" viewBox="0 0 400 340" role="img" aria-label="A coordinated team of specialists, each connected to your shared plan">
+      <g stroke="rgba(255,255,255,.34)" stroke-width="1.4" fill="none">
+        <line class="conn" x1="200" y1="170" x2="200" y2="58"/>
+        <line class="conn" x1="200" y1="170" x2="322" y2="116"/>
+        <line class="conn" x1="200" y1="170" x2="322" y2="226"/>
+        <line class="conn" x1="200" y1="170" x2="200" y2="284"/>
+        <line class="conn" x1="200" y1="170" x2="78" y2="226"/>
+        <line class="conn" x1="200" y1="170" x2="78" y2="116"/>
+      </g>
+      <g font-size="11" text-anchor="middle">
+        <g><circle cx="200" cy="58" r="36" fill="#2c2c2c" stroke="rgba(255,255,255,.6)"/><text x="200" y="55" fill="#fff">Exec</text><text x="200" y="68" fill="rgba(255,255,255,.62)">Asst</text></g>
+        <g><circle cx="322" cy="116" r="36" fill="#2c2c2c" stroke="rgba(255,255,255,.6)"/><text x="322" y="113" fill="#fff">Design</text><text x="322" y="126" fill="rgba(255,255,255,.62)">& brand</text></g>
+        <g><circle cx="322" cy="226" r="36" fill="#2c2c2c" stroke="rgba(255,255,255,.6)"/><text x="322" y="223" fill="#fff">Book-</text><text x="322" y="236" fill="rgba(255,255,255,.62)">keeping</text></g>
+        <g><circle cx="200" cy="284" r="36" fill="#2c2c2c" stroke="rgba(255,255,255,.6)"/><text x="200" y="281" fill="#fff">Support</text><text x="200" y="294" fill="rgba(255,255,255,.62)">& ops</text></g>
+        <g><circle cx="78" cy="226" r="36" fill="#2c2c2c" stroke="rgba(255,255,255,.6)"/><text x="78" y="223" fill="#fff">Social</text><text x="78" y="236" fill="rgba(255,255,255,.62)">& content</text></g>
+        <g><circle cx="78" cy="116" r="36" fill="#2c2c2c" stroke="rgba(255,255,255,.6)"/><text x="78" y="113" fill="#fff">Research</text><text x="78" y="126" fill="rgba(255,255,255,.62)">& data</text></g>
+      </g>
+      <g class="hub">
+        <circle cx="200" cy="170" r="40" fill="#2c2c2c" stroke="#fff" stroke-width="1.6"/>
+        <polygon points="200,150 211,165 205,165 205,188 195,188 195,165 189,165" fill="#9A9A9A"/>
+      </g>
+      <text x="200" y="228" text-anchor="middle" font-size="10.5" fill="rgba(255,255,255,.62)" letter-spacing=".12em">YOUR PLAN</text>
+    </svg>
+    <p>Matched specialists across every function, coordinated by a dedicated operations manager. Work keeps moving whoever&rsquo;s out &mdash; and each task is handled by someone who&rsquo;s actually great at it.</p>
+    <div class="lab"><span class="dot"></span> One contact, zero bottlenecks</div>
+  </div>
+</div>
+</div></section>
+
+<!-- 02 CUSTOMIZATION -->
+<section class="sec-pad"><div class="wrap"><div class="sec-head reveal"><div class="eyebrow"><span class="tick"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1"/><path d="M12 6.5v11M6.5 12h11" stroke="currentColor" stroke-width="1"/></svg></span> Built around you</div><h2>We assemble the exact team<br>your business needs.</h2></div>
+<div class="two-col">
+  <div class="copy reveal">
+    <p>We don&rsquo;t drop a generic assistant into your inbox and wish you luck. We learn how your business actually runs, then build the precise mix of specialists it needs &mdash; an executive assistant here, a designer there, someone on the books, someone on your funnel.</p>
+    <p>As your priorities shift, the team shifts with them. No posting a job, no screening r&eacute;sum&eacute;s, no onboarding a stranger from scratch.</p>
+  </div>
+  <div class="chips reveal" style="transition-delay:.08s">
+    <span class="on">Executive Assistant</span>
+    <span>Bookkeeping &amp; Invoicing</span>
+    <span class="on">Graphic Design</span>
+    <span>Social Media</span>
+    <span>Customer Support</span>
+    <span class="on">Research &amp; Data</span>
+    <span>Project Management</span>
+    <span>Calendar &amp; Scheduling</span>
+    <span>Copywriting</span>
+    <span class="on">Systems &amp; Automation</span>
+    <span>Lead Generation</span>
+    <span>CRM &amp; Ops</span>
+  </div>
+</div>
+</div></section>
+
+<!-- 03 HOURS -->
+<section class="sec-pad hours-sec"><div class="wrap"><div class="sec-head reveal"><div class="eyebrow"><span class="tick"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1"/><path d="M12 6.5v11M6.5 12h11" stroke="currentColor" stroke-width="1"/></svg></span> Your hours</div><h2>One pool of hours.<br>Spent wherever the work is.</h2></div>
+<div class="hours-grid">
+  <div class="hours-copy reveal">
+    <p>Your plan is a block of hours &mdash; not a block of one person&rsquo;s time. A design-heavy week followed by an admin-heavy one? The same hours stretch across whoever&rsquo;s needed.</p>
+    <p>Nothing sits idle. No extra contracts. No paying five people full-time for work you only need part of.</p>
+    <p class="hint"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 1v22M3 6l5-5 5 5M3 18l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Try moving the hours around &rarr;</p>
+  </div>
+  <div class="panel reveal" style="transition-delay:.08s" aria-label="Interactive demo of allocating a shared pool of hours across the team">
+    <div class="ptop"><div><div class="plabel">Your weekly plan</div><div class="ptotal">40<small> hrs / week</small></div></div></div>
+    <div class="bar" id="bar"></div>
+    <div class="rows" id="rows"></div>
+    <div class="pfoot">Same hours. Any mix. No new contracts.</div>
+  </div>
+</div>
+</div></section>
+
+<!-- 04 OUTCOMES -->
+<section class="sec-pad"><div class="wrap"><div class="sec-head reveal"><div class="eyebrow"><span class="tick"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1"/><path d="M12 6.5v11M6.5 12h11" stroke="currentColor" stroke-width="1"/></svg></span> What it means for you</div><h2>A support system<br>that grows with you.</h2></div>
+<div class="why-grid">
+  <div class="why-item reveal"><svg class="cp" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.2"/><path d="M12 6.5v11M6.5 12h11" stroke="currentColor" stroke-width="1.2"/></svg><div><h3>Well-rounded from day one</h3><p>Real coverage across every function, instead of betting your whole operation on one hire&rsquo;s range and hoping it&rsquo;s enough.</p></div></div>
+  <div class="why-item reveal"><svg class="cp" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.2"/><path d="M12 6.5v11M6.5 12h11" stroke="currentColor" stroke-width="1.2"/></svg><div><h3>No more hiring treadmill</h3><p>When the work grows or changes, we add or shift specialists. You never run another hiring round or onboard from scratch.</p></div></div>
+  <div class="why-item reveal"><svg class="cp" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.2"/><path d="M12 6.5v11M6.5 12h11" stroke="currentColor" stroke-width="1.2"/></svg><div><h3>One relationship, many experts</h3><p>A single operations manager coordinates the whole team. You delegate once, and it gets handled by the right person every time.</p></div></div>
+  <div class="why-item reveal"><svg class="cp" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.2"/><path d="M12 6.5v11M6.5 12h11" stroke="currentColor" stroke-width="1.2"/></svg><div><h3>Hours that flex, never wasted</h3><p>Your hours follow the work week to week, so quiet stretches in one area simply fund the busy ones in another.</p></div></div>
+</div>
+</div></section>
+
+<!-- CTA -->
+<section class="cta" id="contact"><div class="wrap"><div class="eyebrow"><span class="tick"><svg viewBox="0 0 140 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1"/><path d="M12 6.5v11M6.5 12h11" stroke="currentColor" stroke-width="1"/><line x1="27" y1="12" x2="120" y2="12" stroke="currentColor" stroke-width="1"/><path d="M114 7l8 5-8 5" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Get started</div><h2>Ready to trade your<br>assistant for a team?</h2><p>Book a discovery call and we&rsquo;ll map exactly where a team takes work off your plate &mdash; usually within the first conversation.</p><div class="cta-row"><a class="btn light" href="mailto:justin@upscale-ops.com">Book a discovery call <svg viewBox="0 0 24 12" fill="none" aria-hidden="true"><path d="M0 6h21M16 1l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn outline-light" href="mailto:justin@upscale-ops.com">Email us</a></div></div></section>
+
+<!-- FOOTER -->
+<footer><div class="wrap"><div class="foot-top"><div class="foot-brand"><svg class="mark" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M60 64 L60 119 A40 40 0 0 0 140 119 L140 64" fill="none" stroke="#FFFFFF" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/><polygon points="100,48 126,84 113,84 113,140 87,140 87,84 74,84" fill="#9A9A9A"/></svg><div class="bn"><b>Upscale</b> <span>Operations</span></div><p>An operations team for businesses that have outgrown a single assistant.</p><span class="tick"><svg viewBox="0 0 140 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1"/><path d="M12 6.5v11M6.5 12h11" stroke="currentColor" stroke-width="1"/><line x1="27" y1="12" x2="120" y2="12" stroke="currentColor" stroke-width="1"/><path d="M114 7l8 5-8 5" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="foot-col"><h4>What we run</h4><a href="index.html#services">Inbox &amp; Admin</a><a href="index.html#services">Customer Support</a><a href="index.html#services">Bookkeeping</a><a href="index.html#services">Project Management</a><a href="index.html#services">Systems &amp; Automation</a></div><div class="foot-col"><h4>Team</h4><a href="about.html">Justin Josef</a><a href="grace-joy.html">Grace Joy</a><a href="lia-andrea.html">Dr. Lia Andrea</a></div><div class="foot-col"><h4>Get in touch</h4><a href="mailto:justin@upscale-ops.com">justin@upscale-ops.com</a><a href="index.html#contact">Book a discovery call</a></div></div><div class="foot-bot"><span>&copy; 2026 Upscale Operations. Working as one. For you.</span><span>An operations team, not a single assistant.</span></div></div></footer>
+
+<script>
+(function(){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  var mb=document.getElementById('menuBtn'),nl=document.getElementById('navlinks');
+  if(mb&&nl){mb.addEventListener('click',function(){var o=nl.classList.toggle('open');mb.setAttribute('aria-expanded',o);});}
+
+  /* shared-hours allocator */
+  var POOL=40;
+  var roles=[
+    {name:'Executive Assistant', hrs:12, color:'#FFFFFF'},
+    {name:'Graphic Design',      hrs:8,  color:'#CFCFCF'},
+    {name:'Bookkeeping',         hrs:6,  color:'#A6A6A6'},
+    {name:'Social Media',        hrs:6,  color:'#808080'},
+    {name:'Customer Support',    hrs:4,  color:'#5C5C5C'}
+  ];
+  var barEl=document.getElementById('bar'), rowsEl=document.getElementById('rows');
+  function used(){return roles.reduce(function(s,r){return s+r.hrs;},0);}
+  function render(){
+    var flex=POOL-used();
+    barEl.innerHTML='';
+    roles.forEach(function(r){
+      var s=document.createElement('div'); s.className='seg';
+      s.style.width=(r.hrs/POOL*100)+'%'; s.style.background=r.color; barEl.appendChild(s);
+    });
+    if(flex>0){var f=document.createElement('div'); f.className='seg flex'; f.style.width=(flex/POOL*100)+'%'; barEl.appendChild(f);}
+    rowsEl.innerHTML='';
+    roles.forEach(function(r,i){
+      var row=document.createElement('div'); row.className='row';
+      row.innerHTML='<span class="sw" style="background:'+r.color+'"></span>'+
+        '<span class="rn">'+r.name+'</span>'+
+        '<span class="rh">'+r.hrs+'<small>h</small></span>'+
+        '<span class="stepper">'+
+          '<button data-i="'+i+'" data-d="-1" aria-label="Remove an hour from '+r.name+'"'+(r.hrs<=0?' disabled':'')+'>&minus;</button>'+
+          '<button data-i="'+i+'" data-d="1" aria-label="Add an hour to '+r.name+'"'+(flex<=0?' disabled':'')+'>+</button>'+
+        '</span>';
+      rowsEl.appendChild(row);
+    });
+    var fr=document.createElement('div'); fr.className='row flexrow';
+    fr.innerHTML='<span class="sw" style="background:#4d4d4d"></span>'+
+      '<span class="rn">Unassigned &middot; flexible</span>'+
+      '<span class="rh">'+flex+'<small>h</small></span><span style="width:64px"></span>';
+    rowsEl.appendChild(fr);
+    rowsEl.querySelectorAll('button').forEach(function(b){
+      b.addEventListener('click',function(){
+        var i=+b.dataset.i, d=+b.dataset.d, flexNow=POOL-used();
+        if(d>0&&flexNow<=0)return;
+        if(d<0&&roles[i].hrs<=0)return;
+        roles[i].hrs+=d; render();
+      });
+    });
+  }
+  render();
+})();
+</script>
+</body>
+</html>

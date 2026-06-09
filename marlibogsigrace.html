@@ -90,9 +90,9 @@
     border:8px solid var(--paper-soft);box-shadow:0 0 0 1.5px var(--line),0 26px 50px -28px rgba(62,52,43,.5);
     background:linear-gradient(175deg,#cdd7d6 0%,#dfe2cf 45%,#e7ddc8 100%);
   }
-  .arch img{width:100%;height:100%;object-fit:cover;filter:saturate(.92);}
+  .arch img{width:100%;height:100%;object-fit:cover;}
   .photo-fallback{
-    position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+    position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:12px;
     color:var(--sage);
   }
   .photo-fallback svg{width:54px;height:54px;opacity:.7;}
@@ -124,6 +124,8 @@
   .polaroid:nth-child(1){transform:rotate(-3deg);}
   .polaroid:nth-child(2){transform:rotate(2.4deg);}
   .polaroid:nth-child(3){transform:rotate(-1.5deg);}
+  .polaroid:nth-child(4){transform:rotate(2deg);}
+  .polaroid:nth-child(5){transform:rotate(-2.6deg);}
   .polaroid::before{
     content:"";position:absolute;top:-14px;left:50%;transform:translateX(-50%) rotate(-2deg);
     width:96px;height:26px;background:rgba(168,67,44,.16);border:1px dashed rgba(168,67,44,.32);
@@ -305,9 +307,11 @@
       <p>As we take this next step in our life together, we couldn't be happier to celebrate our wedding day with the people we love most.</p>
     </div>
     <div class="photo-row reveal">
-      <div class="polaroid"><div class="pic"><img src="grace-elmar-1.jpg" alt="" onerror="this.style.display='none'"></div><p class="cap">the early days</p></div>
-      <div class="polaroid"><div class="pic"><img src="grace-elmar-2.jpg" alt="" onerror="this.style.display='none'"></div><p class="cap">the proposal</p></div>
-      <div class="polaroid"><div class="pic"><img src="grace-elmar-3.jpg" alt="" onerror="this.style.display='none'"></div><p class="cap">us, today</p></div>
+      <div class="polaroid"><div class="pic"><img src="grace-elmar-1.jpg" alt="Grace and Elmar in high school" onerror="this.style.display='none'"></div><p class="cap">where it began</p></div>
+      <div class="polaroid"><div class="pic"><img src="grace-elmar-2.jpg" alt="Grace and Elmar dressed up" onerror="this.style.display='none'"></div><p class="cap">all dressed up</p></div>
+      <div class="polaroid"><div class="pic"><img src="grace-elmar-3.jpg" alt="Grace and Elmar" onerror="this.style.display='none'"></div><p class="cap">just us</p></div>
+      <div class="polaroid"><div class="pic"><img src="grace-elmar-4.jpg" alt="Grace and Elmar laughing" onerror="this.style.display='none'"></div><p class="cap">always laughing</p></div>
+      <div class="polaroid"><div class="pic"><img src="grace-elmar-5.jpg" alt="Grace and Elmar's engagement" onerror="this.style.display='none'"></div><p class="cap">the proposal</p></div>
     </div>
   </div>
 </section>

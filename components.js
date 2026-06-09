@@ -10,7 +10,7 @@
   var EMAIL = "justin@upscale-ops.com";
   var CTA   = { label: "Book a discovery call", href: "mailto:justin@upscale-ops.com" };
   var NAV = [
-    { label: "The Difference", href: "difference.html" },
+    { label: "The Difference", href: "the-difference.html" },
     { label: "Why a Team",     href: "why-a-team.html" },
     { label: "How It Works",   href: "how-it-works.html" },
     { label: "What We Run",    href: "what-we-run.html" },

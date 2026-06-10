@@ -136,7 +136,10 @@
 
   /* ---------- DETAILS CARDS ---------- */
   .details{background:var(--paper-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:36px;}
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:36px;}
+  .card .ck{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--brick);margin-bottom:6px;}
+  .card .map-link{display:inline-block;margin-top:14px;color:var(--brick);text-decoration:none;font-size:14.5px;font-weight:500;border-bottom:1px solid var(--line);padding-bottom:2px;transition:border-color .2s;}
+  .card .map-link:hover{border-color:var(--brick);}
   .card{
     background:var(--card);border:1px solid var(--line);border-radius:6px;padding:30px 26px;text-align:center;
   }
@@ -158,6 +161,25 @@
   .event h3{font-size:24px;color:var(--ink);margin:3px 0 4px;}
   .event .meta{font-style:italic;color:var(--brown);font-size:16px;}
   .event .desc{color:var(--ink);font-size:16.5px;margin-top:4px;opacity:.9;}
+
+  /* ---------- DRESS CODE ---------- */
+  .dress{background:var(--paper-soft);border-top:1px solid var(--line);}
+  .dress-intro{text-align:center;font-style:italic;color:var(--brown);font-size:18px;max-width:520px;margin:0 auto;}
+  .dress-lineup{margin:32px auto 6px;max-width:760px;}
+  .dress-lineup .lineup-svg{width:100%;height:auto;display:block;}
+  .dress-lineup .fig{transform-box:fill-box;transform-origin:50% 100%;}
+  @keyframes sway{0%,100%{transform:rotate(-1.2deg);}50%{transform:rotate(1.2deg);}}
+  @media (prefers-reduced-motion:no-preference){
+    .dress-lineup .fig{animation:sway 5.5s ease-in-out infinite;}
+  }
+  .dgroups{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:42px;}
+  .dgroup{text-align:center;}
+  .dgroup h3{font-family:'Fraunces',serif;font-size:22px;color:var(--ink);margin-bottom:22px;letter-spacing:-.01em;}
+  .swatches{display:flex;flex-wrap:wrap;justify-content:center;gap:18px 22px;margin-bottom:20px;}
+  .sw{display:flex;flex-direction:column;align-items:center;gap:9px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brown);}
+  .sw span{width:46px;height:46px;border-radius:50%;box-shadow:0 0 0 1px rgba(62,52,43,.12),0 8px 18px -11px rgba(62,52,43,.55);}
+  .dgroup>p{color:var(--ink);font-size:16px;max-width:340px;margin:0 auto;opacity:.85;line-height:1.6;}
+  @media (max-width:680px){.dgroups{grid-template-columns:1fr;gap:40px;}}
 
   /* ---------- FAQ ---------- */
   .faq{background:var(--paper-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
@@ -266,7 +288,7 @@
     <circle cx="62" cy="14" r="5" fill="#C16B4E"/>
   </svg>
 
-  <p class="kicker date-line">August 7, 2026 &nbsp;·&nbsp; Venston Bay</p>
+  <p class="kicker date-line">August 7, 2026 &nbsp;·&nbsp; Quezon City</p>
   <h1>Grace <span class="amp">&amp;</span> Elmar</h1>
   <p class="sub">are getting married &mdash; and we'd love for you to be there</p>
   <div class="hero-actions">
@@ -303,8 +325,8 @@
       <div class="botanical"><svg viewBox="0 0 120 34" fill="none"><path d="M60 6v22M60 12c-8-6-18-4-26 2M60 12c8-6 18-4 26 2M60 22c-6-4-14-3-20 1M60 22c6-4 14-3 20 1" stroke="#A8432C" stroke-width="1.3"/><circle cx="60" cy="5" r="3.4" fill="#C16B4E"/></svg></div>
     </div>
     <div class="narrow story-text reveal">
-      <p>We first met as high school classmates and soon became the best of friends. Over time, our friendship grew stronger and blossomed into love. What began as a simple friendship became a beautiful journey together,  </p>
-      <p>and now, as we take this next step in our lives, we couldn't be happier to celebrate our wedding day with the people we love most.</p>
+      <p>We first met as high school classmates and soon became the best of friends. Over time, our friendship grew stronger and blossomed into love.</p>
+      <p>What began as a simple friendship became a beautiful journey together &mdash; and now, as we take this next step in our lives, we couldn't be happier to celebrate our wedding day with the people we love most.</p>
     </div>
     <div class="photo-row reveal">
       <div class="polaroid"><div class="pic"><img src="grace-elmar-1.jpg" alt="Grace and Elmar in high school" onerror="this.style.display='none'"></div><p class="cap">where it began</p></div>
@@ -320,24 +342,23 @@
 <section class="details">
   <div class="wrap">
     <div class="lead reveal">
-      <p class="kicker">The day itself</p>
+      <p class="kicker">Where it happens</p>
       <h2 class="section-title">The <em>Details</em></h2>
     </div>
     <div class="cards">
       <div class="card reveal">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></div>
-        <h3>Wedding Venue</h3>
-        <p>The ceremony and reception will both be held at Viewpoint Garden Hotel in Venston Bay.</p>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.4 7-11a7 7 0 1 0-14 0c0 4.6 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
+        <p class="ck">Ceremony</p>
+        <h3>The Atrium</h3>
+        <p>Don Jose Heights, Quezon City</p>
+        <a class="map-link" href="https://maps.app.goo.gl/PekuQHJC52p7yzWW8" target="_blank" rel="noopener">View on map &rarr;</a>
       </div>
       <div class="card reveal">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18v11H3zM3 12h18M7 7V5h10v2"/></svg></div>
-        <h3>Accommodations</h3>
-        <p>Enjoy a 5% discount when you book at the venue. Several nearby hotels and B&amp;Bs are available too.</p>
-      </div>
-      <div class="card reveal">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5v14M7 8l-2-3M17 8l2-3"/><circle cx="12" cy="12" r="9"/></svg></div>
-        <h3>Activities</h3>
-        <p>Join us for the rehearsal dinner the evening before, and a relaxed brunch the morning after.</p>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.4 7-11a7 7 0 1 0-14 0c0 4.6 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
+        <p class="ck">Reception</p>
+        <h3>Artan Garden</h3>
+        <p>Novaliches, Quezon City</p>
+        <a class="map-link" href="https://maps.app.goo.gl/GVDpC3FFNAwnWYoY9" target="_blank" rel="noopener">View on map &rarr;</a>
       </div>
     </div>
   </div>
@@ -347,34 +368,64 @@
 <section>
   <div class="wrap">
     <div class="lead reveal">
-      <p class="kicker">A look at the weekend</p>
+      <p class="kicker">A look at the day</p>
       <h2 class="section-title">Wedding <em>Schedule</em></h2>
       <div class="botanical"><svg viewBox="0 0 120 34" fill="none"><path d="M60 6v22M60 12c-8-6-18-4-26 2M60 12c8-6 18-4 26 2M60 22c-6-4-14-3-20 1M60 22c6-4 14-3 20 1" stroke="#A8432C" stroke-width="1.3"/><circle cx="60" cy="5" r="3.4" fill="#C16B4E"/></svg></div>
     </div>
     <div class="timeline">
       <div class="event reveal">
-        <div class="et">6:00 PM · July 14</div>
-        <h3>Rehearsal Dinner</h3>
-        <p class="meta">Viewpoint Garden Hotel Restaurant</p>
-        <p class="desc">A get-together with family and close friends before the big day.</p>
-      </div>
-      <div class="event reveal">
-        <div class="et">4:00 PM · July 15</div>
+        <div class="et">3:00 PM · August 7</div>
         <h3>Wedding Ceremony</h3>
-        <p class="meta">Viewpoint Garden Hotel Events Area</p>
-        <p class="desc">Grace and Elmar are married in a formal garden ceremony.</p>
+        <p class="meta">The Atrium, Don Jose Heights</p>
+        <p class="desc">Grace and Elmar exchange vows, surrounded by family and friends.</p>
       </div>
       <div class="event reveal">
-        <div class="et">5:00 PM · July 15</div>
+        <div class="et">5:00 PM · August 7</div>
         <h3>Cocktail Hour</h3>
-        <p class="meta">Viewpoint Garden Hotel Events Area</p>
-        <p class="desc">Drinks and hors d'oeuvres before the reception.</p>
+        <p class="meta">Artan Garden, Novaliches</p>
+        <p class="desc">Drinks and hors d'oeuvres as the celebration begins.</p>
       </div>
       <div class="event reveal">
-        <div class="et">6:00 PM · July 15</div>
+        <div class="et">6:00 PM · August 7</div>
         <h3>Wedding Reception</h3>
-        <p class="meta">Viewpoint Garden Hotel Events Area</p>
+        <p class="meta">Artan Garden, Novaliches</p>
         <p class="desc">Dinner and a program, with dancing to follow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DRESS CODE ===== -->
+<section class="dress">
+  <div class="wrap">
+    <div class="lead reveal">
+      <p class="kicker">What to wear</p>
+      <h2 class="section-title">Dress <em>Code</em></h2>
+      <div class="botanical"><svg viewBox="0 0 120 34" fill="none"><path d="M60 6v22M60 12c-8-6-18-4-26 2M60 12c8-6 18-4 26 2M60 22c-6-4-14-3-20 1M60 22c6-4 14-3 20 1" stroke="#A8432C" stroke-width="1.3"/><circle cx="60" cy="5" r="3.4" fill="#C16B4E"/></svg></div>
+    </div>
+    <p class="dress-intro reveal">A warm, earthy palette to match our garden celebration.</p>
+    <div class="dress-lineup reveal"><svg class="lineup-svg" viewBox="0 14 764 206" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of entourage and guest attire"><g class="fig" style="animation-delay:0.0s"><ellipse cx="40" cy="212" rx="27" ry="4.5" fill="#3E342B" opacity="0.12"/><circle cx="40" cy="38" r="14.5" fill="#28221d"/><rect x="25" y="40" width="6" height="54" rx="3" fill="#28221d"/><rect x="49" y="40" width="6" height="54" rx="3" fill="#28221d"/><path d="M26,60 C25,72 30,84 31,94 C27,122 14,168 10,206 L70,206 C66,168 53,122 49,94 C50,84 55,72 54,60 Z" fill="#7c7f4d"/><path d="M31,95 C37,99 43,99 49,95" stroke="#3E342B" stroke-opacity="0.13" stroke-width="2" fill="none"/><rect x="36.5" y="52" width="7" height="9" rx="3" fill="#e8c5a1"/><circle cx="40" cy="42" r="12" fill="#e8c5a1"/></g><g class="fig" style="animation-delay:-0.6s"><ellipse cx="112" cy="212" rx="27" ry="4.5" fill="#3E342B" opacity="0.12"/><path d="M97,60 L100,132 L99.5,206 L109.5,206 L110,135 L114,135 L114.5,206 L124.5,206 L124,132 L127,60 Z" fill="#2f3133"/><path d="M106,60 L112,92 L118,60 Z" fill="#F4ECDD"/><path d="M110.4,62 L113.6,62 L112,90 Z" fill="#3E342B" fill-opacity="0.5"/><rect x="108.5" y="52" width="7" height="9" rx="3" fill="#d6ab84"/><circle cx="112" cy="42" r="12" fill="#d6ab84"/><path d="M100,40 Q112,22 124,40 Q112,33 100,40 Z" fill="#28221d"/></g><g class="fig" style="animation-delay:-1.2s"><ellipse cx="184" cy="212" rx="27" ry="4.5" fill="#3E342B" opacity="0.12"/><circle cx="184" cy="38" r="14.5" fill="#28221d"/><rect x="169" y="40" width="6" height="54" rx="3" fill="#28221d"/><rect x="193" y="40" width="6" height="54" rx="3" fill="#28221d"/><path d="M170,60 C169,72 174,84 175,94 C171,122 158,168 154,206 L214,206 C210,168 197,122 193,94 C194,84 199,72 198,60 Z" fill="#9aa386"/><path d="M175,95 C181,99 187,99 193,95" stroke="#3E342B" stroke-opacity="0.13" stroke-width="2" fill="none"/><rect x="180.5" y="52" width="7" height="9" rx="3" fill="#bd8a61"/><circle cx="184" cy="42" r="12" fill="#bd8a61"/></g><g class="fig" style="animation-delay:-1.8s"><ellipse cx="256" cy="212" rx="27" ry="4.5" fill="#3E342B" opacity="0.12"/><path d="M241,60 L244,132 L243.5,206 L253.5,206 L254,135 L258,135 L258.5,206 L268.5,206 L268,132 L271,60 Z" fill="#34373a"/><path d="M250,60 L256,92 L262,60 Z" fill="#F4ECDD"/><path d="M254.4,62 L257.6,62 L256,90 Z" fill="#3E342B" fill-opacity="0.5"/><rect x="252.5" y="52" width="7" height="9" rx="3" fill="#e8c5a1"/><circle cx="256" cy="42" r="12" fill="#e8c5a1"/><path d="M244,40 Q256,22 268,40 Q256,33 244,40 Z" fill="#28221d"/></g><g class="fig" style="animation-delay:-2.4s"><ellipse cx="328" cy="212" rx="27" ry="4.5" fill="#3E342B" opacity="0.12"/><circle cx="328" cy="38" r="14.5" fill="#28221d"/><rect x="313" y="40" width="6" height="54" rx="3" fill="#28221d"/><rect x="337" y="40" width="6" height="54" rx="3" fill="#28221d"/><path d="M314,60 C313,72 318,84 319,94 C315,122 302,168 298,206 L358,206 C354,168 341,122 337,94 C338,84 343,72 342,60 Z" fill="#5f6b3c"/><path d="M319,95 C325,99 331,99 337,95" stroke="#3E342B" stroke-opacity="0.13" stroke-width="2" fill="none"/><rect x="324.5" y="52" width="7" height="9" rx="3" fill="#d6ab84"/><circle cx="328" cy="42" r="12" fill="#d6ab84"/></g><g class="fig" style="animation-delay:-3.0s"><ellipse cx="436" cy="212" rx="27" ry="4.5" fill="#3E342B" opacity="0.12"/><circle cx="436" cy="38" r="14.5" fill="#28221d"/><rect x="421" y="40" width="6" height="54" rx="3" fill="#28221d"/><rect x="445" y="40" width="6" height="54" rx="3" fill="#28221d"/><path d="M422,60 C421,72 426,84 427,94 C423,122 410,168 406,206 L466,206 C462,168 449,122 445,94 C446,84 451,72 450,60 Z" fill="#b5623f"/><path d="M427,95 C433,99 439,99 445,95" stroke="#3E342B" stroke-opacity="0.13" stroke-width="2" fill="none"/><rect x="432.5" y="52" width="7" height="9" rx="3" fill="#bd8a61"/><circle cx="436" cy="42" r="12" fill="#bd8a61"/></g><g class="fig" style="animation-delay:-3.6s"><ellipse cx="508" cy="212" rx="27" ry="4.5" fill="#3E342B" opacity="0.12"/><path d="M493,60 L496,132 L495.5,206 L505.5,206 L506,135 L510,135 L510.5,206 L520.5,206 L520,132 L523,60 Z" fill="#6f4a33"/><path d="M502,60 L508,92 L514,60 Z" fill="#F4ECDD"/><path d="M506.4,62 L509.6,62 L508,90 Z" fill="#3E342B" fill-opacity="0.5"/><rect x="504.5" y="52" width="7" height="9" rx="3" fill="#e8c5a1"/><circle cx="508" cy="42" r="12" fill="#e8c5a1"/><path d="M496,40 Q508,22 520,40 Q508,33 496,40 Z" fill="#28221d"/></g><g class="fig" style="animation-delay:-4.2s"><ellipse cx="580" cy="212" rx="27" ry="4.5" fill="#3E342B" opacity="0.12"/><circle cx="580" cy="38" r="14.5" fill="#28221d"/><rect x="565" y="40" width="6" height="54" rx="3" fill="#28221d"/><rect x="589" y="40" width="6" height="54" rx="3" fill="#28221d"/><path d="M566,60 C565,72 570,84 571,94 C567,122 554,168 550,206 L610,206 C606,168 593,122 589,94 C590,84 595,72 594,60 Z" fill="#c89a6b"/><path d="M571,95 C577,99 583,99 589,95" stroke="#3E342B" stroke-opacity="0.13" stroke-width="2" fill="none"/><rect x="576.5" y="52" width="7" height="9" rx="3" fill="#d6ab84"/><circle cx="580" cy="42" r="12" fill="#d6ab84"/></g><g class="fig" style="animation-delay:-4.8s"><ellipse cx="652" cy="212" rx="27" ry="4.5" fill="#3E342B" opacity="0.12"/><path d="M637,60 L640,132 L639.5,206 L649.5,206 L650,135 L654,135 L654.5,206 L664.5,206 L664,132 L667,60 Z" fill="#8c5a3c"/><path d="M646,60 L652,92 L658,60 Z" fill="#F4ECDD"/><path d="M650.4,62 L653.6,62 L652,90 Z" fill="#3E342B" fill-opacity="0.5"/><rect x="648.5" y="52" width="7" height="9" rx="3" fill="#bd8a61"/><circle cx="652" cy="42" r="12" fill="#bd8a61"/><path d="M640,40 Q652,22 664,40 Q652,33 640,40 Z" fill="#28221d"/></g><g class="fig" style="animation-delay:-5.4s"><ellipse cx="724" cy="212" rx="27" ry="4.5" fill="#3E342B" opacity="0.12"/><circle cx="724" cy="38" r="14.5" fill="#28221d"/><rect x="709" y="40" width="6" height="54" rx="3" fill="#28221d"/><rect x="733" y="40" width="6" height="54" rx="3" fill="#28221d"/><path d="M710,60 C709,72 714,84 715,94 C711,122 698,168 694,206 L754,206 C750,168 737,122 733,94 C734,84 739,72 738,60 Z" fill="#a78a68"/><path d="M715,95 C721,99 727,99 733,95" stroke="#3E342B" stroke-opacity="0.13" stroke-width="2" fill="none"/><rect x="720.5" y="52" width="7" height="9" rx="3" fill="#e8c5a1"/><circle cx="724" cy="42" r="12" fill="#e8c5a1"/></g></svg></div>
+    <div class="dgroups">
+      <div class="dgroup reveal">
+        <h3>The Entourage</h3>
+        <div class="swatches">
+          <div class="sw"><span style="background:#7c7f4d"></span>Moss</div>
+          <div class="sw"><span style="background:#9aa386"></span>Sage</div>
+          <div class="sw"><span style="background:#5f6b3c"></span>Olive</div>
+          <div class="sw"><span style="background:#2f3133"></span>Charcoal</div>
+        </div>
+        <p>Ladies in shades of green; gentlemen in black or charcoal suits.</p>
+      </div>
+      <div class="dgroup reveal">
+        <h3>Our Guests</h3>
+        <div class="swatches">
+          <div class="sw"><span style="background:#b5623f"></span>Terracotta</div>
+          <div class="sw"><span style="background:#c89a6b"></span>Sand</div>
+          <div class="sw"><span style="background:#a78a68"></span>Taupe</div>
+          <div class="sw"><span style="background:#8c5a3c"></span>Clay</div>
+          <div class="sw"><span style="background:#e7d7bb"></span>Cream</div>
+        </div>
+        <p>Warm earth tones, please &mdash; and kindly leave white for the bride.</p>
       </div>
     </div>
   </div>
@@ -391,10 +442,6 @@
       <details open>
         <summary>How do I RSVP?<span class="pm"></span></summary>
         <p class="ans">Please RSVP by July 7, 2026 using the form below. You can also reach us by phone or email &mdash; details are at the bottom of the page.</p>
-      </details>
-      <details>
-        <summary>Is there a dress code?<span class="pm"></span></summary>
-        <p class="ans">Dressy or smart-casual garden attire. Think light-coloured suits, slacks with button-downs, and midi or maxi dresses in soft colours or florals. Message us with any questions!</p>
       </details>
       <details>
         <summary>Do you have a registry?<span class="pm"></span></summary>
@@ -458,7 +505,7 @@
   <div class="contact-grid reveal">
     <div class="item"><div class="t">Phone</div><a href="tel:09163004869">0916 300 4869</a></div>
     <div class="item"><div class="t">Email</div><a href="mailto:elmarsobrevega3@gmail.com">elmarsobrevega3@gmail.com</a></div>
-    <div class="item"><div class="t">Venue</div><span>Viewpoint Garden Hotel, Venston Bay</span></div>
+    <div class="item"><div class="t">Venue</div><span>The Atrium &amp; Artan Garden, Quezon City</span></div>
   </div>
   <p class="names reveal">Grace &amp; Elmar</p>
   <p class="sign reveal">August 7, 2026 &nbsp;·&nbsp; with love</p>

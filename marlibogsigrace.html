@@ -528,9 +528,11 @@
       <p class="sub">Kindly respond by July 7, 2026</p>
     </div>
     <div class="form-card reveal">
-      <form name="rsvp" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="rsvpForm">
-        <input type="hidden" name="form-name" value="rsvp">
-        <p hidden><label>Leave this empty: <input name="bot-field"></label></p>
+      <form action="https://api.web3forms.com/submit" method="POST" id="rsvpForm">
+        <input type="hidden" name="access_key" value="11552946-7a03-4eeb-89c3-05b6d65f2560">
+        <input type="hidden" name="subject" value="New RSVP for Grace &amp; Elmar">
+        <input type="hidden" name="from_name" value="Grace &amp; Elmar Wedding Site">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" aria-hidden="true">
 
         <div class="field name-lookup">
           <label for="g-name">Find your name</label>
@@ -648,13 +650,21 @@
   });
   document.addEventListener('click', function(e){ if(!e.target.closest('.name-lookup')){ nList.style.display='none'; } });
 
-  // ---- RSVP (Netlify Forms via AJAX, with inline thank-you) ----
+  // ---- RSVP (Web3Forms via AJAX, with inline thank-you) ----
   var form = document.getElementById('rsvpForm');
   form.addEventListener('submit', function(e){
     e.preventDefault();
-    var body = new URLSearchParams(new FormData(form)).toString();
-    fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:body})
-      .then(function(){ form.style.display='none'; document.getElementById('thanks').style.display='block'; })
+    var data = Object.fromEntries(new FormData(form).entries());
+    fetch('https://api.web3forms.com/submit', {
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body: JSON.stringify(data)
+    })
+      .then(function(r){ return r.json(); })
+      .then(function(json){
+        if(json.success){ form.style.display='none'; document.getElementById('thanks').style.display='block'; }
+        else { alert("Sorry — your RSVP didn't go through. Please reach Grace & Elmar by phone or email instead."); }
+      })
       .catch(function(){ alert("Sorry — something went wrong sending your RSVP. Please reach Grace & Elmar by phone or email instead."); });
   });
 </script>

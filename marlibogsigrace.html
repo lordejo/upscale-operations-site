@@ -448,7 +448,7 @@
     <div class="ent-group reveal">
       <div class="ent-pair">
         <div class="ent-col"><p class="role">Groomsmen</p><p class="nm">Mr. Zaldy F. Sobrevega Jr.</p><p class="nm">Mr. Beloved Asco</p><p class="nm">Mr. Angelo Villaluz</p><p class="nm">Mr. Dominic Gaspe</p><p class="nm">Mr. Roma Kristian Gestiada</p><p class="nm">Engr. Rangel Lapus</p><p class="nm">Mr. Arvey Oasay</p></div>
-        <div class="ent-col"><p class="role">Bridesmaids</p><p class="nm">Mrs. Valerie Jeseth M. Legaspi, RN</p><p class="nm">Ms. Lia Andrea Pinaroc, DVM</p><p class="nm">Ms. Celine M. Cultura, RPH</p><p class="nm">Engr. Julie Anne Ention</p><p class="nm">Ms. Ma. Chrisanti Jubilee Boquiren</p></div>
+        <div class="ent-col"><p class="role">Bridesmaids</p><p class="nm">Mrs. Valerie Jeseth M. Legaspi, RN</p><p class="nm">Ms. Lia Andrea Pinaroc, DVM</p><p class="nm">Ms. Celine M. Cultura, RPH</p><p class="nm">Engr. Julie Anne Ention</p><p class="nm">Ms. Ma. Crisanti Jubilee Boquiren</p></div>
       </div>
     </div>
 
@@ -479,9 +479,9 @@
           <div class="sw"><span style="background:#7c7f4d"></span>Moss</div>
           <div class="sw"><span style="background:#9aa386"></span>Sage</div>
           <div class="sw"><span style="background:#5f6b3c"></span>Olive</div>
-          <div class="sw"><span style="background:#D3D3D3"></span>Gray</div>
+          <div class="sw"><span style="background:#2f3133"></span>Charcoal</div>
         </div>
-        <p>Ladies in shades of green; gentlemen in gray suits.</p>
+        <p>Ladies in shades of green; gentlemen in black or charcoal suits.</p>
       </div>
       <div class="dgroup reveal">
         <h3>Our Guests</h3>
@@ -579,9 +579,10 @@
   <p class="sign reveal">August 7, 2026 &nbsp;·&nbsp; with love</p>
 </footer>
 
+<script src="guests.js"></script>
 <script>
   // ---- Countdown ----
-  var target = new Date("2026-08-07T15:00:00").getTime();
+  var target = new Date("2026-08-07T16:00:00").getTime();
   function tick(){
     var now = Date.now(), d = target - now;
     if(d < 0){ d = 0; }
@@ -606,17 +607,18 @@
 
   // ---- Guest name lookup ----
   // Names pulled from the couple's guest sheet. Edit this list to add/remove names.
-  var GUESTS = ["Ana","Apo","Ate Apot","Ate Celine","Ate Joy","Ate Juna","Ate Mahalia","Ate ni Kimberly","Ate Val","Atty Mr. Susano","Atty Mrs. Susano","Baby","Bapang Freddie","Bed","Chon","Ck","Clio","Diego Garalde","Director Fadriquela","Doc Canlas","Doc Joey","Doktora Canlas","Doms","Elmaz","Jacklyn","Jalen","James","Jandrei","Jerem","Joseph Susano","Jubs","Juju","Junjun","Justoy","Krystel","Kupa","Kuya Abet","Kuya Jeric","Kuya Jr.","Kuya Jumar","Kuya Mack","Kuya Oboy","Kuya Vince","Kyrie","Lance","Lia","Lourde","Mama (Tita)","Mika","Mike","Miles","Mr Abed","Mr Callejo","Mr Dela Cruz","Mr Pinaroc","Mr. Lapus","Mr. Quilloy","Mr Tita Grace","Mrs Abed","Mrs Callejo","Mrs Dela Cruz","Mrs Duenas","Mrs Pinaroc","Mrs. Fadriquela","Mrs. Lapus","Mrs. Quilloy","Myla","Neil","Ninang Lluvido","Ninong Lluvido","Nogs","Panpan","Papa (Tito)","Ponpon","Qlo","Rangel","Roma","Rudy","Ryan Trangia","SF04 Lucerio Duenas","Sophia Icasiano","Tita Belen","Tita Grace","Tita Helen","Tita Josie","Tita Mariet","Tita Medz","Tito Jun","Tito Santi","Val","Von","Wani","Yani","Yeho","Yumiko","Zaldy"];
+  var GUESTS = (window.GUESTS || []);
 
   var nInput = document.getElementById('g-name');
   var nList = document.getElementById('nameResults');
   var nFound = document.getElementById('nameFound');
   var activeIdx = -1;
+  function norm(s){ return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''); }
   function renderList(){
-    var q = nInput.value.trim().toLowerCase();
+    var q = norm(nInput.value.trim());
     nList.innerHTML=''; activeIdx=-1;
     if(q.length < 2){ nList.style.display='none'; return; }
-    var matches = GUESTS.filter(function(n){ return n.toLowerCase().indexOf(q)!==-1; }).slice(0,8);
+    var matches = GUESTS.filter(function(n){ return norm(n).indexOf(q)!==-1; }).slice(0,8);
     if(matches.length===0){
       var none=document.createElement('li'); none.className='none';
       none.textContent="No match — type your name as the couple would write it, or RSVP via the contact details below.";

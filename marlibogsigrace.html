@@ -203,6 +203,19 @@
   .guest-attire img{width:100%;height:auto;display:block;border-radius:16px;box-shadow:0 26px 54px -30px rgba(62,52,43,.5);}
   .guest-attire figcaption{text-align:center;font-style:italic;color:var(--brown);font-size:15px;margin-top:15px;}
 
+  /* ---------- GOOD TO KNOW + GIFT GUIDE ---------- */
+  .notes{border-top:1px solid var(--line);}
+  .gift{border-top:1px solid var(--line);}
+  .gift-ico{display:flex;justify-content:center;margin-bottom:14px;}
+  .gift-ico svg{width:44px;height:44px;stroke:var(--brick);}
+  .gift-verse{text-align:center;font-style:italic;font-size:20px;color:var(--ink);line-height:1.7;}
+  .gift-pay{text-align:center;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--brick);font-weight:600;margin:34px 0 20px;}
+  .gift-qrs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:740px;margin:0 auto;align-items:start;}
+  .gift-qrs figure{margin:0;}
+  .gift-qrs img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--line);box-shadow:0 16px 34px -22px rgba(62,52,43,.55);}
+  .gift-qrs figcaption{text-align:center;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--brown);margin-top:11px;font-weight:600;}
+  @media (max-width:620px){.gift-qrs{grid-template-columns:1fr;max-width:300px;gap:26px;}}
+
   /* ---------- FAQ ---------- */
   .faq{background:var(--paper-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
   .qa{max-width:680px;margin:0 auto;}
@@ -470,7 +483,11 @@
     <p class="dress-intro reveal">A warm, earthy palette to match our garden celebration.</p>
     <figure class="guest-attire reveal">
       <img src="guest-attire.jpg" alt="Illustration of guests in earth tones and matcha green attire">
-      <figcaption>Guest attire &mdash; earth tones with a touch of matcha green</figcaption>
+      <figcaption>For our guests &mdash; earth tones with a touch of matcha green</figcaption>
+    </figure>
+    <figure class="guest-attire reveal">
+      <img src="sponsor-attire.jpg" alt="Illustration of a Filipiniana gown and Barong Tagalog for the principal sponsors">
+      <figcaption>For our Ninong &amp; Ninang &mdash; Barong Tagalog for the gentlemen, Filipiniana for the ladies</figcaption>
     </figure>
     <div class="dgroups">
       <div class="dgroup reveal">
@@ -499,6 +516,46 @@
   </div>
 </section>
 
+<!-- ===== GOOD TO KNOW ===== -->
+<section class="notes">
+  <div class="wrap">
+    <div class="lead reveal">
+      <p class="kicker">A few kind requests</p>
+      <h2 class="section-title">Good to <em>Know</em></h2>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/><line x1="4.5" y1="20.5" x2="19.5" y2="3.5"/></svg></div>
+        <h3>Unplugged Ceremony</h3>
+        <p>We really want to see your faces, not your devices. Please put away phones and cameras until after the ceremony.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="5.6" y1="5.6" x2="18.4" y2="18.4"/><circle cx="12" cy="12" r="4.6"/><path d="M12 7.4c1.2 0 1.8.7 1.8 1.4"/></svg></div>
+        <h3>No Kids Allowed</h3>
+        <p>We love children, but we respectfully request that this be an adult-only event. The only kids attending are those who are part of the entourage.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GIFT GUIDE ===== -->
+<section class="gift">
+  <div class="wrap">
+    <div class="lead reveal">
+      <p class="kicker">With gratitude</p>
+      <h2 class="section-title">Gift <em>Guide</em></h2>
+    </div>
+    <div class="gift-ico reveal"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="9" width="17" height="11.5" rx="1.2"/><path d="M3.5 12.5h17"/><path d="M12 9v11.5"/><path d="M12 9c-1.4 0-4.5-.4-4.5-2.6S10.7 6.2 12 9z"/><path d="M12 9c1.4 0 4.5-.4 4.5-2.6S13.3 6.2 12 9z"/></svg></div>
+    <p class="gift-verse narrow reveal">With all that we have, we've been truly blessed. Your presence and prayers are all that we request. If you desire to give nonetheless, a monetary gift is the one we suggest.</p>
+    <p class="gift-pay reveal">Should you wish to send a gift</p>
+    <div class="gift-qrs reveal">
+      <figure><img src="bdo-qr.jpg" alt="BDO InstaPay QR code for Elmar Sobrevega"><figcaption>BDO</figcaption></figure>
+      <figure><img src="maya-qr.jpg" alt="Maya QR code for Elmar Sobrevega"><figcaption>Maya</figcaption></figure>
+      <figure><img src="gcash-qr.jpg" alt="GCash InstaPay QR code"><figcaption>GCash</figcaption></figure>
+    </div>
+  </div>
+</section>
+
 <!-- ===== FAQ ===== -->
 <section class="faq">
   <div class="wrap">
@@ -513,7 +570,7 @@
       </details>
       <details>
         <summary>Do you have a registry?<span class="pm"></span></summary>
-        <p class="ans">Your presence on our wedding day is the greatest gift of all &mdash; we're not setting up a registry, so simply come and celebrate with us!</p>
+        <p class="ans">Your presence on our wedding day is the greatest gift of all! We haven't set up a traditional registry, but if you'd like to bless us with a gift, you'll find our Gift Guide above with a few e-wallet and bank options.</p>
       </details>
     </div>
   </div>

@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guest List · Justin's Graduation Dinner</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --up-maroon: #7B1113;
+  --up-maroon-dark: #5C0D0E;
+  --up-green: #014421;
+  --up-green-light: #1A5C3B;
+  --up-gold: #C9A961;
+  --up-gold-light: #E3CD96;
+  --cream: #FAF7F0;
+  --cream-warm: #F5EFE0;
+  --ink: #1F1F1F;
+  --ink-soft: #5F584B;
+  --ink-light: #8A847A;
+  --shadow: rgba(31, 13, 14, 0.10);
+  --border: #E5DFCE;
+  --bg-soft: #F5F0DF;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+[hidden] { display: none !important; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.5;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.sablay-stripe {
+  height: 8px;
+  background: linear-gradient(90deg,
+    var(--up-maroon) 0%, var(--up-maroon) 18%,
+    var(--up-gold) 18%, var(--up-gold) 23%,
+    var(--up-green) 23%, var(--up-green) 45%,
+    var(--up-gold) 45%, var(--up-gold) 50%,
+    var(--up-maroon) 50%, var(--up-maroon) 68%,
+    var(--up-gold) 68%, var(--up-gold) 73%,
+    var(--up-green) 73%, var(--up-green) 100%
+  );
+}
+
+/* ============ GATE ============ */
+.gate {
+  min-height: calc(100vh - 8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: linear-gradient(135deg, var(--up-maroon-dark), var(--up-maroon));
+  color: white;
+  text-align: center;
+}
+
+.gate-card {
+  max-width: 400px;
+  background: white;
+  color: var(--ink);
+  padding: 48px 36px;
+  border-radius: 4px;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.30);
+}
+
+.gate-card h1 {
+  font-family: 'Playfair Display', serif;
+  color: var(--up-maroon);
+  margin-bottom: 6px;
+  font-size: 1.7rem;
+}
+
+.gate-card p {
+  color: var(--ink-soft);
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+}
+
+.gate-card input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #D5CFC1;
+  border-radius: 3px;
+  font-size: 1rem;
+  margin-bottom: 16px;
+  text-align: center;
+  letter-spacing: 2px;
+  font-family: inherit;
+}
+
+.gate-card input:focus {
+  outline: none;
+  border-color: var(--up-maroon);
+}
+
+.gate-card button {
+  width: 100%;
+  padding: 14px;
+  background: var(--up-maroon);
+  color: white;
+  border: none;
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+
+.gate-card button:hover { background: var(--up-maroon-dark); }
+
+.gate-error {
+  color: var(--up-maroon);
+  font-size: 0.85rem;
+  margin-top: 8px;
+}
+
+/* ============ HEADER ============ */
+.app-header {
+  background: linear-gradient(135deg, var(--up-green) 0%, var(--up-green-light) 100%);
+  color: white;
+  padding: 36px 32px;
+}
+
+.app-header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.app-title h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.9rem;
+  margin-bottom: 4px;
+  letter-spacing: -0.3px;
+}
+
+.app-title .subtitle {
+  font-style: italic;
+  opacity: 0.85;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+}
+
+.app-title .breadcrumb {
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-bottom: 10px;
+}
+
+.header-links {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.header-links a {
+  color: white;
+  opacity: 0.85;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.4);
+  padding-bottom: 1px;
+  transition: opacity 0.18s;
+}
+
+.header-links a:hover { opacity: 1; }
+
+/* ============ MAIN CONTAINER ============ */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 28px 24px 80px;
+}
+
+/* ============ STATS ============ */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.stat-card {
+  background: white;
+  padding: 20px;
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 0 2px 12px var(--shadow);
+  border-top: 3px solid var(--up-maroon);
+}
+
+.stat-card.invited { border-top-color: var(--up-gold); }
+.stat-card.sent { border-top-color: var(--up-gold); }
+.stat-card.attending { border-top-color: var(--up-green); }
+.stat-card.declined { border-top-color: var(--ink-soft); }
+.stat-card.pending { border-top-color: var(--ink-light); }
+
+.stat-card .number {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--up-maroon);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.stat-card.attending .number { color: var(--up-green); }
+.stat-card.declined .number { color: var(--ink-soft); }
+.stat-card.pending .number { color: var(--ink-light); }
+.stat-card.sent .number { color: #B8902C; }
+
+.stat-card .label {
+  font-size: 0.66rem;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+.stat-card .sublabel {
+  font-size: 0.75rem;
+  color: var(--ink-light);
+  margin-top: 2px;
+  font-style: italic;
+}
+
+/* ============ TOOLBAR ============ */
+.toolbar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.toolbar input, .toolbar select, .toolbar button {
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  background: white;
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  cursor: pointer;
+  color: var(--ink);
+  height: 40px;
+}
+
+.toolbar input:focus, .toolbar select:focus {
+  outline: none;
+  border-color: var(--up-maroon);
+}
+
+.toolbar input[type="search"] {
+  flex: 1;
+  min-width: 220px;
+  cursor: text;
+}
+
+.btn-primary {
+  background: var(--up-maroon) !important;
+  color: white !important;
+  border-color: var(--up-maroon) !important;
+  font-weight: 600;
+}
+
+.btn-primary:hover { background: var(--up-maroon-dark) !important; }
+
+.btn-secondary {
+  background: var(--up-green) !important;
+  color: white !important;
+  border-color: var(--up-green) !important;
+}
+
+.btn-ghost {
+  background: white;
+  color: var(--ink-soft);
+}
+
+.btn-ghost:hover {
+  background: var(--bg-soft);
+  border-color: var(--up-gold);
+}
+
+/* ============ TABLE ============ */
+.table-wrap {
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px var(--shadow);
+  overflow-x: auto;
+}
+
+.guest-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+}
+
+.guest-table th {
+  background: var(--up-maroon);
+  color: white;
+  padding: 11px 12px;
+  text-align: left;
+  font-size: 0.66rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.guest-table td {
+  padding: 12px;
+  font-size: 0.88rem;
+  border-bottom: 1px solid #F0EBDC;
+  vertical-align: middle;
+}
+
+.guest-table tr:last-child td { border-bottom: none; }
+.guest-table tr:hover td { background: #FBF8EF; }
+
+.guest-name {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.guest-name .notes-preview {
+  font-weight: 400;
+  font-size: 0.78rem;
+  color: var(--ink-light);
+  font-style: italic;
+  display: block;
+  margin-top: 2px;
+}
+
+.contact-cell {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+.category-pill {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 11px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.cat-family { background: #F4D6D8; color: #7B1113; }
+.cat-extended { background: #F8EBC4; color: #8C7515; }
+.cat-up { background: #CFE3D6; color: #014421; }
+.cat-college { background: #D5DBEB; color: #1F4E79; }
+.cat-hs { background: #DDD3E6; color: #4A2C66; }
+.cat-work { background: #E5D9CC; color: #5A4530; }
+.cat-other { background: #DFDFDF; color: #555; }
+
+.status-pill {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 11px;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.s-notsent { background: #EEE9DC; color: #7A746B; }
+.s-sent { background: #F8EBC4; color: #8C7515; }
+.s-confirmed { background: #CFE3D6; color: #014421; }
+
+.rsvp-pill {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 11px;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.r-pending { background: #EEE9DC; color: #7A746B; }
+.r-yes { background: #014421; color: white; }
+.r-no { background: #5F584B; color: white; }
+
+.matched-tag {
+  display: inline-block;
+  background: var(--up-green);
+  color: white;
+  font-size: 0.6rem;
+  padding: 2px 6px;
+  border-radius: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.action-btn {
+  background: none;
+  border: 1px solid var(--border);
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  font-family: inherit;
+  margin-right: 4px;
+  transition: all 0.18s;
+}
+
+.action-btn:hover {
+  background: var(--bg-soft);
+  border-color: var(--up-gold);
+}
+
+.action-btn.danger {
+  color: var(--up-maroon);
+  border-color: #F4D6D8;
+}
+
+.action-btn.danger:hover {
+  background: var(--up-maroon);
+  color: white;
+  border-color: var(--up-maroon);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 24px;
+  background: white;
+  border-radius: 4px;
+  color: var(--ink-soft);
+}
+
+.empty-state h3 {
+  font-family: 'Playfair Display', serif;
+  color: var(--up-maroon);
+  margin-bottom: 8px;
+  font-size: 1.4rem;
+}
+
+/* ============ MODAL ============ */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(31, 13, 14, 0.55);
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 60px 20px 20px;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.modal-backdrop.open { display: flex; }
+
+.modal {
+  background: white;
+  border-radius: 4px;
+  max-width: 520px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.30);
+  overflow: hidden;
+}
+
+.modal-header {
+  background: var(--up-maroon);
+  color: white;
+  padding: 18px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  opacity: 0.85;
+}
+
+.modal-close:hover { opacity: 1; }
+
+.modal-body {
+  padding: 24px 22px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 0.92rem;
+  background: #FDFCF8;
+  color: var(--ink);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--up-maroon);
+  background: white;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+textarea.form-control { resize: vertical; min-height: 60px; font-family: inherit; }
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.modal-actions button {
+  padding: 10px 18px;
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 0.78rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-cancel {
+  background: white;
+  border: 1px solid var(--border) !important;
+  color: var(--ink-soft);
+}
+
+.btn-save {
+  background: var(--up-maroon);
+  color: white;
+}
+
+.btn-save:hover { background: var(--up-maroon-dark); }
+
+/* ============ TOAST ============ */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--up-green);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.20);
+  font-size: 0.9rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.25s, transform 0.25s;
+  z-index: 200;
+  pointer-events: none;
+}
+
+.toast.show { opacity: 1; transform: translateY(0); }
+.toast.error { background: var(--up-maroon); }
+
+/* Responsive */
+@media (max-width: 640px) {
+  .app-header { padding: 28px 20px; }
+  .app-title h1 { font-size: 1.5rem; }
+  .container { padding: 20px 16px 60px; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .form-row { grid-template-columns: 1fr; }
+  .toolbar input[type="search"] { width: 100%; min-width: 0; }
+}
+</style>
+</head>
+<body>
+
+<div class="sablay-stripe"></div>
+
+<!-- ============ GATE (PIN ENTRY) ============ -->
+<div id="gate" class="gate">
+  <div class="gate-card">
+    <h1>Private Page</h1>
+    <p>This page lists invitees for the graduation dinner. Enter the access code to continue.</p>
+    <input type="password" id="gate-input" placeholder="Code" autocomplete="off" autofocus>
+    <button id="gate-submit">Enter</button>
+    <div id="gate-error" class="gate-error" hidden>Incorrect code. Try again.</div>
+  </div>
+</div>
+
+<!-- ============ APP ============ -->
+<div id="app" hidden>
+
+<header class="app-header">
+  <div class="app-header-inner">
+    <div class="app-title">
+      <div class="breadcrumb">Justin&rsquo;s Graduation · 5 July 2026</div>
+      <h1>Guest List Manager</h1>
+      <p class="subtitle">Track invitations and cross-reference with RSVPs</p>
+    </div>
+    <div class="header-links">
+      <a href="grad_dinner_rsvp.html" target="_blank">View RSVP page →</a>
+      <a href="grad_dinner_rsvp.html#sablay2026" target="_blank">RSVP Dashboard →</a>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="stats-grid" id="stats-grid"></div>
+
+  <div class="toolbar">
+    <input type="search" id="search-input" placeholder="Search by name, contact, or notes…" autocomplete="off">
+    <select id="filter-category">
+      <option value="all">All categories</option>
+      <option value="Immediate Family">Immediate Family</option>
+      <option value="Extended Family">Extended Family</option>
+      <option value="UP Friends">UP Friends</option>
+      <option value="College Friends">College Friends</option>
+      <option value="High School Friends">High School Friends</option>
+      <option value="Work Colleagues">Work Colleagues</option>
+      <option value="Other">Other</option>
+    </select>
+    <select id="filter-status">
+      <option value="all">All status</option>
+      <option value="not_sent">Not sent</option>
+      <option value="sent">Sent</option>
+      <option value="confirmed">Confirmed</option>
+    </select>
+    <select id="filter-rsvp">
+      <option value="all">All RSVP</option>
+      <option value="pending">Pending</option>
+      <option value="yes">Attending</option>
+      <option value="no">Declined</option>
+    </select>
+    <button id="add-btn" class="btn-primary">+ Add invitee</button>
+    <button id="bulk-add-btn" class="btn-ghost">Bulk add</button>
+    <button id="sync-btn" class="btn-secondary">↻ Sync RSVPs</button>
+    <button id="export-btn" class="btn-ghost">Export CSV</button>
+  </div>
+
+  <div id="list-container"></div>
+
+</div>
+</div>
+
+<!-- ============ MODAL: ADD/EDIT ============ -->
+<div id="modal-backdrop" class="modal-backdrop">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="modal-title">Add invitee</h3>
+      <button class="modal-close" id="modal-close">&times;</button>
+    </div>
+    <div class="modal-body">
+      <form id="guest-form">
+        <input type="hidden" id="guest-id">
+
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" class="form-control" id="guest-name" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Category *</label>
+            <select class="form-control" id="guest-category" required>
+              <option value="Immediate Family">Immediate Family</option>
+              <option value="Extended Family">Extended Family</option>
+              <option value="UP Friends">UP Friends</option>
+              <option value="College Friends">College Friends</option>
+              <option value="High School Friends">High School Friends</option>
+              <option value="Work Colleagues">Work Colleagues</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Party size (planned)</label>
+            <input type="number" class="form-control" id="guest-party" min="1" max="6" value="1">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Contact (email, mobile, Messenger)</label>
+          <input type="text" class="form-control" id="guest-contact" placeholder="Optional but helpful">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Invitation status</label>
+            <select class="form-control" id="guest-status">
+              <option value="not_sent">Not sent</option>
+              <option value="sent">Sent</option>
+              <option value="confirmed">Confirmed receipt</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>RSVP (manual override)</label>
+            <select class="form-control" id="guest-rsvp">
+              <option value="pending">Pending</option>
+              <option value="yes">Attending</option>
+              <option value="no">Declined</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Notes</label>
+          <textarea class="form-control" id="guest-notes" placeholder="Optional · dietary needs, table preference, etc."></textarea>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn-cancel" id="modal-cancel">Cancel</button>
+          <button type="submit" class="btn-save">Save invitee</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL: BULK ADD ============ -->
+<div id="bulk-backdrop" class="modal-backdrop">
+  <div class="modal">
+    <div class="modal-header">
+      <h3>Bulk add invitees</h3>
+      <button class="modal-close" id="bulk-close">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label>One name per line</label>
+        <textarea class="form-control" id="bulk-names" rows="10" placeholder="Tito Boy&#10;Tita Lourdes&#10;Lola Annie&#10;Tim Formoso&#10;Marc Padiernos"></textarea>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Apply category to all</label>
+          <select class="form-control" id="bulk-category">
+            <option value="Immediate Family">Immediate Family</option>
+            <option value="Extended Family" selected>Extended Family</option>
+            <option value="UP Friends">UP Friends</option>
+            <option value="College Friends">College Friends</option>
+            <option value="High School Friends">High School Friends</option>
+            <option value="Work Colleagues">Work Colleagues</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Apply status to all</label>
+          <select class="form-control" id="bulk-status">
+            <option value="not_sent" selected>Not sent</option>
+            <option value="sent">Sent</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn-cancel" id="bulk-cancel">Cancel</button>
+        <button type="button" class="btn-save" id="bulk-save">Add all</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ TOAST ============ -->
+<div id="toast" class="toast"></div>
+
+<script>
+// ============================================
+// CONFIG
+// ============================================
+const ACCESS_CODE = 'sablay2026';
+const INVITEES_KEY = 'justin_grad_invitees';
+const RSVPS_KEY = 'justin_grad_rsvps';
+
+// ============================================
+// GATE
+// ============================================
+function checkAccess() {
+  const stored = sessionStorage.getItem('gate_unlocked');
+  if (stored === ACCESS_CODE || window.location.hash.slice(1) === ACCESS_CODE) {
+    unlockApp();
+    return true;
+  }
+  return false;
+}
+
+function unlockApp() {
+  document.getElementById('gate').hidden = true;
+  document.getElementById('app').hidden = false;
+  sessionStorage.setItem('gate_unlocked', ACCESS_CODE);
+  initApp();
+}
+
+document.getElementById('gate-submit').addEventListener('click', tryUnlock);
+document.getElementById('gate-input').addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') tryUnlock();
+});
+
+function tryUnlock() {
+  const v = document.getElementById('gate-input').value.trim().toLowerCase();
+  if (v === ACCESS_CODE) {
+    unlockApp();
+  } else {
+    document.getElementById('gate-error').hidden = false;
+    document.getElementById('gate-input').value = '';
+    document.getElementById('gate-input').focus();
+  }
+}
+
+// ============================================
+// DATA
+// ============================================
+function loadInvitees() {
+  try {
+    const raw = localStorage.getItem(INVITEES_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch (e) {
+    console.error('Failed to load invitees:', e);
+    return [];
+  }
+}
+
+function saveInvitees(invitees) {
+  localStorage.setItem(INVITEES_KEY, JSON.stringify(invitees));
+}
+
+function loadRSVPs() {
+  try {
+    const raw = localStorage.getItem(RSVPS_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch (e) {
+    return [];
+  }
+}
+
+function uid() {
+  return 'g_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+}
+
+function normalizeName(s) {
+  return (s || '').toLowerCase().trim().replace(/\s+/g, ' ');
+}
+
+function normalizeContact(s) {
+  return (s || '').toLowerCase().trim().replace(/[\s\-\.\(\)]/g, '');
+}
+
+// ============================================
+// SYNC WITH RSVPs
+// ============================================
+function matchRSVPs(invitees, rsvps, opts) {
+  opts = opts || {};
+  let matchedCount = 0;
+  invitees.forEach(inv => {
+    const invName = normalizeName(inv.name);
+    const invContact = normalizeContact(inv.contact);
+
+    const match = rsvps.find(r => {
+      const rName = normalizeName(r.name);
+      const rContact = normalizeContact(r.contact);
+      // Match by exact name OR by contact
+      return (invName && rName && invName === rName) ||
+             (invContact && rContact && invContact === rContact);
+    });
+
+    if (match) {
+      // Don't overwrite if user manually set a different RSVP
+      if (!inv.rsvp_manual_override) {
+        inv.rsvp_status = match.attending;
+        inv.rsvp_party_size = match.party_size;
+        inv.rsvp_dietary = match.dietary;
+        inv.rsvp_message = match.message;
+        inv.rsvp_synced_at = new Date().toISOString();
+        inv.matched_rsvp = true;
+      }
+      matchedCount++;
+    } else {
+      inv.matched_rsvp = false;
+    }
+  });
+  return matchedCount;
+}
+
+// ============================================
+// RENDERING
+// ============================================
+let cached = [];
+let cachedRsvps = [];
+let filter = { category: 'all', status: 'all', rsvp: 'all', search: '' };
+
+function initApp() {
+  refresh();
+  setupEventHandlers();
+}
+
+function refresh() {
+  cached = loadInvitees();
+  cachedRsvps = loadRSVPs();
+  matchRSVPs(cached, cachedRsvps);
+  // Sort: pending first, then by category, then by name
+  cached.sort((a, b) => {
+    const aRsvp = a.rsvp_status || 'pending';
+    const bRsvp = b.rsvp_status || 'pending';
+    if (aRsvp !== bRsvp) {
+      const order = { 'pending': 0, 'yes': 1, 'no': 2 };
+      return order[aRsvp] - order[bRsvp];
+    }
+    return (a.name || '').localeCompare(b.name || '');
+  });
+  renderStats();
+  renderTable();
+}
+
+function renderStats() {
+  const total = cached.length;
+  const sent = cached.filter(g => g.invitation_status === 'sent' || g.invitation_status === 'confirmed').length;
+  const attending = cached.filter(g => g.rsvp_status === 'yes').length;
+  const declined = cached.filter(g => g.rsvp_status === 'no').length;
+  const pending = cached.filter(g => !g.rsvp_status || g.rsvp_status === 'pending').length;
+  const totalGuests = cached.filter(g => g.rsvp_status === 'yes').reduce((sum, g) => sum + (g.rsvp_party_size || g.party_size || 1), 0);
+
+  document.getElementById('stats-grid').innerHTML = `
+    <div class="stat-card invited">
+      <div class="number">${total}</div>
+      <div class="label">Invited</div>
+    </div>
+    <div class="stat-card sent">
+      <div class="number">${sent}</div>
+      <div class="label">Sent</div>
+      <div class="sublabel">${total ? Math.round(sent / total * 100) : 0}%</div>
+    </div>
+    <div class="stat-card attending">
+      <div class="number">${attending}</div>
+      <div class="label">Attending</div>
+    </div>
+    <div class="stat-card declined">
+      <div class="number">${declined}</div>
+      <div class="label">Declined</div>
+    </div>
+    <div class="stat-card pending">
+      <div class="number">${pending}</div>
+      <div class="label">Pending</div>
+    </div>
+    <div class="stat-card attending">
+      <div class="number">${totalGuests}</div>
+      <div class="label">Total Guests</div>
+      <div class="sublabel">incl. parties</div>
+    </div>
+  `;
+}
+
+function filteredInvitees() {
+  return cached.filter(g => {
+    if (filter.category !== 'all' && g.category !== filter.category) return false;
+    if (filter.status !== 'all' && g.invitation_status !== filter.status) return false;
+    if (filter.rsvp !== 'all') {
+      const r = g.rsvp_status || 'pending';
+      if (filter.rsvp !== r) return false;
+    }
+    if (filter.search) {
+      const q = filter.search.toLowerCase();
+      const blob = [g.name, g.contact, g.notes, g.category].filter(Boolean).join(' ').toLowerCase();
+      if (!blob.includes(q)) return false;
+    }
+    return true;
+  });
+}
+
+function renderTable() {
+  const filtered = filteredInvitees();
+  const container = document.getElementById('list-container');
+
+  if (filtered.length === 0) {
+    const isEmpty = cached.length === 0;
+    container.innerHTML = `
+      <div class="empty-state">
+        <h3>${isEmpty ? 'No invitees yet' : 'No matches'}</h3>
+        <p>${isEmpty
+          ? 'Click <strong>+ Add invitee</strong> to add your first guest, or use <strong>Bulk add</strong> to paste a list.'
+          : 'Try adjusting your filters or search.'}</p>
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = `
+    <div class="table-wrap">
+      <table class="guest-table">
+        <thead>
+          <tr>
+            <th style="width:24%">Name</th>
+            <th style="width:14%">Category</th>
+            <th style="width:18%">Contact</th>
+            <th style="width:12%">Invite</th>
+            <th style="width:12%">RSVP</th>
+            <th style="width:6%">Party</th>
+            <th style="width:14%">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${filtered.map(g => renderRow(g)).join('')}
+        </tbody>
+      </table>
+    </div>
+  `;
+
+  // Wire up action buttons
+  container.querySelectorAll('.edit-btn').forEach(btn => {
+    btn.addEventListener('click', () => openEdit(btn.dataset.id));
+  });
+  container.querySelectorAll('.delete-btn').forEach(btn => {
+    btn.addEventListener('click', () => deleteGuest(btn.dataset.id));
+  });
+}
+
+function renderRow(g) {
+  const catClass = 'cat-' + (
+    g.category === 'Immediate Family' ? 'family' :
+    g.category === 'Extended Family' ? 'extended' :
+    g.category === 'UP Friends' ? 'up' :
+    g.category === 'College Friends' ? 'college' :
+    g.category === 'High School Friends' ? 'hs' :
+    g.category === 'Work Colleagues' ? 'work' : 'other'
+  );
+
+  const invStatus = g.invitation_status || 'not_sent';
+  const invLabel = invStatus === 'not_sent' ? 'Not sent' : invStatus === 'sent' ? 'Sent' : 'Confirmed';
+  const invClass = 's-' + (invStatus === 'not_sent' ? 'notsent' : invStatus);
+
+  const rsvp = g.rsvp_status || 'pending';
+  const rsvpLabel = rsvp === 'yes' ? 'Attending' : rsvp === 'no' ? 'Declined' : 'Pending';
+  const rsvpClass = 'r-' + rsvp;
+
+  const partySize = rsvp === 'yes' ? (g.rsvp_party_size || g.party_size || 1) : '—';
+
+  return `
+    <tr>
+      <td>
+        <span class="guest-name">${esc(g.name)}${g.matched_rsvp ? '<span class="matched-tag">✓ RSVP</span>' : ''}</span>
+        ${g.notes ? `<span class="notes-preview">${esc(g.notes)}</span>` : ''}
+      </td>
+      <td><span class="category-pill ${catClass}">${esc(g.category || 'Other')}</span></td>
+      <td class="contact-cell">${esc(g.contact || '—')}</td>
+      <td><span class="status-pill ${invClass}">${invLabel}</span></td>
+      <td><span class="rsvp-pill ${rsvpClass}">${rsvpLabel}</span></td>
+      <td>${partySize}</td>
+      <td>
+        <button class="action-btn edit-btn" data-id="${g.id}">Edit</button>
+        <button class="action-btn danger delete-btn" data-id="${g.id}">Delete</button>
+      </td>
+    </tr>
+  `;
+}
+
+function esc(s) {
+  if (!s) return '';
+  return String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+// ============================================
+// EVENT HANDLERS
+// ============================================
+function setupEventHandlers() {
+  document.getElementById('search-input').addEventListener('input', (e) => {
+    filter.search = e.target.value;
+    renderTable();
+  });
+  document.getElementById('filter-category').addEventListener('change', (e) => {
+    filter.category = e.target.value;
+    renderTable();
+  });
+  document.getElementById('filter-status').addEventListener('change', (e) => {
+    filter.status = e.target.value;
+    renderTable();
+  });
+  document.getElementById('filter-rsvp').addEventListener('change', (e) => {
+    filter.rsvp = e.target.value;
+    renderTable();
+  });
+
+  document.getElementById('add-btn').addEventListener('click', () => openEdit(null));
+  document.getElementById('bulk-add-btn').addEventListener('click', openBulk);
+  document.getElementById('sync-btn').addEventListener('click', manualSync);
+  document.getElementById('export-btn').addEventListener('click', exportCSV);
+
+  // Modal
+  document.getElementById('modal-close').addEventListener('click', closeModal);
+  document.getElementById('modal-cancel').addEventListener('click', closeModal);
+  document.getElementById('guest-form').addEventListener('submit', saveGuest);
+  document.getElementById('modal-backdrop').addEventListener('click', (e) => {
+    if (e.target.id === 'modal-backdrop') closeModal();
+  });
+
+  // Bulk modal
+  document.getElementById('bulk-close').addEventListener('click', closeBulk);
+  document.getElementById('bulk-cancel').addEventListener('click', closeBulk);
+  document.getElementById('bulk-save').addEventListener('click', saveBulk);
+  document.getElementById('bulk-backdrop').addEventListener('click', (e) => {
+    if (e.target.id === 'bulk-backdrop') closeBulk();
+  });
+}
+
+function openEdit(id) {
+  const guest = id ? cached.find(g => g.id === id) : null;
+  document.getElementById('modal-title').textContent = guest ? 'Edit invitee' : 'Add invitee';
+  document.getElementById('guest-id').value = guest ? guest.id : '';
+  document.getElementById('guest-name').value = guest ? (guest.name || '') : '';
+  document.getElementById('guest-category').value = guest ? (guest.category || 'Other') : 'Extended Family';
+  document.getElementById('guest-contact').value = guest ? (guest.contact || '') : '';
+  document.getElementById('guest-party').value = guest ? (guest.party_size || 1) : 1;
+  document.getElementById('guest-status').value = guest ? (guest.invitation_status || 'not_sent') : 'not_sent';
+  document.getElementById('guest-rsvp').value = guest ? (guest.rsvp_status || 'pending') : 'pending';
+  document.getElementById('guest-notes').value = guest ? (guest.notes || '') : '';
+  document.getElementById('modal-backdrop').classList.add('open');
+  setTimeout(() => document.getElementById('guest-name').focus(), 50);
+}
+
+function closeModal() {
+  document.getElementById('modal-backdrop').classList.remove('open');
+}
+
+function saveGuest(e) {
+  e.preventDefault();
+  const id = document.getElementById('guest-id').value;
+  const name = document.getElementById('guest-name').value.trim();
+  if (!name) {
+    showToast('Name is required', 'error');
+    return;
+  }
+
+  const existing = id ? cached.find(g => g.id === id) : null;
+  const newRsvp = document.getElementById('guest-rsvp').value;
+  const wasOverride = existing ? (existing.rsvp_status !== newRsvp) : (newRsvp !== 'pending');
+
+  const data = {
+    id: id || uid(),
+    name: name,
+    category: document.getElementById('guest-category').value,
+    contact: document.getElementById('guest-contact').value.trim(),
+    party_size: parseInt(document.getElementById('guest-party').value || '1'),
+    invitation_status: document.getElementById('guest-status').value,
+    rsvp_status: newRsvp,
+    rsvp_manual_override: wasOverride && newRsvp !== 'pending',
+    notes: document.getElementById('guest-notes').value.trim(),
+    created_at: existing ? existing.created_at : new Date().toISOString(),
+    updated_at: new Date().toISOString()
+  };
+
+  if (existing) {
+    Object.assign(existing, data);
+  } else {
+    cached.push(data);
+  }
+
+  saveInvitees(cached);
+  refresh();
+  closeModal();
+  showToast(existing ? 'Invitee updated' : 'Invitee added');
+}
+
+function deleteGuest(id) {
+  const g = cached.find(x => x.id === id);
+  if (!g) return;
+  if (!confirm(`Delete "${g.name}" from the invitee list?`)) return;
+  cached = cached.filter(x => x.id !== id);
+  saveInvitees(cached);
+  refresh();
+  showToast('Invitee deleted');
+}
+
+function openBulk() {
+  document.getElementById('bulk-names').value = '';
+  document.getElementById('bulk-backdrop').classList.add('open');
+  setTimeout(() => document.getElementById('bulk-names').focus(), 50);
+}
+
+function closeBulk() {
+  document.getElementById('bulk-backdrop').classList.remove('open');
+}
+
+function saveBulk() {
+  const text = document.getElementById('bulk-names').value.trim();
+  if (!text) {
+    showToast('Add at least one name', 'error');
+    return;
+  }
+  const category = document.getElementById('bulk-category').value;
+  const status = document.getElementById('bulk-status').value;
+
+  const lines = text.split(/\r?\n/).map(s => s.trim()).filter(Boolean);
+  const now = new Date().toISOString();
+
+  let added = 0;
+  lines.forEach(name => {
+    // Skip if exact name already exists
+    const exists = cached.find(g => normalizeName(g.name) === normalizeName(name));
+    if (exists) return;
+    cached.push({
+      id: uid(),
+      name: name,
+      category: category,
+      contact: '',
+      party_size: 1,
+      invitation_status: status,
+      rsvp_status: 'pending',
+      rsvp_manual_override: false,
+      notes: '',
+      created_at: now,
+      updated_at: now
+    });
+    added++;
+  });
+
+  saveInvitees(cached);
+  refresh();
+  closeBulk();
+  showToast(`Added ${added} of ${lines.length} invitee${added === 1 ? '' : 's'}${added < lines.length ? ' (duplicates skipped)' : ''}`);
+}
+
+function manualSync() {
+  cachedRsvps = loadRSVPs();
+  const matched = matchRSVPs(cached, cachedRsvps);
+  saveInvitees(cached);
+  refresh();
+  showToast(`Synced ${matched} matched RSVP${matched === 1 ? '' : 's'}`);
+}
+
+function exportCSV() {
+  if (cached.length === 0) {
+    showToast('No invitees to export', 'error');
+    return;
+  }
+  const headers = ['Name', 'Category', 'Contact', 'Invite Status', 'RSVP', 'Party Size', 'Notes', 'Created'];
+  const rows = cached.map(g => [
+    g.name || '',
+    g.category || '',
+    g.contact || '',
+    g.invitation_status || 'not_sent',
+    g.rsvp_status === 'yes' ? 'Attending' : g.rsvp_status === 'no' ? 'Declined' : 'Pending',
+    g.rsvp_status === 'yes' ? (g.rsvp_party_size || g.party_size || 1) : 0,
+    g.notes || '',
+    g.created_at || ''
+  ]);
+  const csv = [headers, ...rows]
+    .map(r => r.map(c => `"${String(c).replace(/"/g, '""')}"`).join(','))
+    .join('\n');
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `grad_dinner_invitees_${new Date().toISOString().slice(0,10)}.csv`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  showToast(`Exported ${cached.length} invitees`);
+}
+
+function showToast(msg, type) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast show' + (type === 'error' ? ' error' : '');
+  setTimeout(() => { t.className = 'toast'; }, 2400);
+}
+
+// ============================================
+// INIT
+// ============================================
+if (!checkAccess()) {
+  // Stay on gate
+}
+</script>
+
+</body>
+</html>

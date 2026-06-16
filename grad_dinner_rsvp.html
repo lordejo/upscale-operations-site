@@ -820,26 +820,6 @@ function renderRSVPForm() {
           </div>
         </div>
       </div>
-
-      <div class="form-group" id="party-size-group">
-        <label>Number in your party (including yourself)</label>
-        <input type="number" class="form-control" name="party_size" min="1" max="6"
-               value="${existing && existing.party_size ? existing.party_size : 1}">
-      </div>
-
-      <div class="form-group">
-        <label>Dietary restrictions or allergies</label>
-        <input type="text" class="form-control" name="dietary"
-               placeholder="Optional · e.g. vegetarian, no shellfish"
-               value="${existing ? escapeAttr(existing.dietary || '') : ''}">
-      </div>
-
-      <div class="form-group">
-        <label>A message for Justin (optional)</label>
-        <textarea class="form-control" name="message"
-                  placeholder="Optional · a note, a memory, a song request">${existing ? escapeHTML(existing.message || '') : ''}</textarea>
-      </div>
-
       <button type="submit" class="submit-btn">${existing ? 'Update RSVP' : 'Submit RSVP'}</button>
     </form>
   `;

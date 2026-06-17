@@ -1,6 +1,5 @@
-// Guest list for Grace & Elmar — used by the RSVP name lookup.
-// Edit here to add, remove, or fix names: one per line, inside "quotes", comma-separated.
-// Order doesn't matter, and accents (e.g. ñ) are matched even if typed as plain letters.
+// Guest list for Grace & Elmar's wedding RSVP.
+// Edit this list to add or remove names; matching is accent-insensitive.
 window.GUESTS = [
   "Aileen Lapus",
   "Alexandra Syquia",
@@ -14,12 +13,15 @@ window.GUESTS = [
   "Ayen Lluvido",
   "Beloved Asco",
   "Celine Cultura",
+  "Charlie Sobrevega",
   "Christopher Kevin Ocampo",
   "Clio Elizandre Villanueva",
+  "Dexter Mallari",
   "Diego Garalde",
   "Dominic Gaspe",
   "Dyanna Valderrama",
   "Elizabeth Asco",
+  "Elma Sobrevega",
   "Elmaz Sobrevega",
   "Elmer R. Susano",
   "Evelyn Panlilio",
@@ -35,10 +37,12 @@ window.GUESTS = [
   "Jalen Lucero",
   "James Panlilio",
   "Jandrei Lucero",
-  "Jenna",
+  "Jenna Medina",
   "Jeremiah Andrew Esguerra",
   "Jeric Angeles",
+  "Jocelyn Legaspi",
   "Joey Concepcion",
+  "Johanne Isabel Dianalan",
   "Joseph Exequiel Susano",
   "Joshua Mallari",
   "Josielyn Mallari",
@@ -51,9 +55,12 @@ window.GUESTS = [
   "Juna Marie Bravo",
   "Justin Josef Callejo",
   "Justin Medina",
+  "Krystel Francisco",
   "Kyrie Legaspi",
   "Lance Fadriquela",
   "Lia Andrea Pinaroc",
+  "Liam Dianalan",
+  "Lourde Almarza",
   "Ma. Bernardita Fadriquela",
   "Ma. Chrisanti Jubilee Boquiren",
   "Mack Fernandez",
@@ -71,6 +78,7 @@ window.GUESTS = [
   "Reymond G Lapus",
   "Rhoderick Fernandez",
   "Roma Kristian Gestiada",
+  "Roman Maningo Jr.",
   "Romeo Fernandez",
   "Rosalinda Dela Cruz",
   "Rudy Fernandez",
@@ -80,10 +88,12 @@ window.GUESTS = [
   "Toribio Asco",
   "Valerie Bico",
   "Valerie Jeseth Legaspi",
+  "Victor Legaspi",
   "Vince Jerald Legaspi",
   "Von Legaspi",
   "Yoshiro Arai",
   "Yuichiro Arai",
   "Yumiko Arai",
-  "Zaldy Sobrevega Jr."
+  "Zaldy Sobrevega",
+  "Zaldy Sobrevega Jr.",
 ];
